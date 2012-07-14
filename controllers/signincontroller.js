@@ -6,10 +6,11 @@ exports.signinGet = function(req, res) {
 }
 
 exports.signinPost = function(req, res) {
-  res.redirect('/');
+  
+  res.redirect('/profile');
 }
 
 exports.signinPut = function(req, res) {
   console.log('put');
-  res.redirect('/');
+  res.redirect('/profile');
 }
