@@ -20,15 +20,21 @@ html(lang='en')
               li.active
                 a(href='/nav') Nav Item
             ul.nav.pull-right
-              li
-                a(href='/signin') Sign in
-              li
-                a(href='/signup') Sign up
+              - if (typeof(session._id) !== 'undefined')
+                li
+                  a(href='/profile/#{session.user}') #{session.user}
+                li
+                  a(href='/signout') Sign out
+              - else
+                li
+                  a(href='/signin') Sign in
+                li
+                  a(href='/signup') Sign up
                 
     .container
       block content
     .container
       script(type='in/Login')
-        You You are identified as <?js= firstName ?> <?js= lastName ?>.
+        | You are identified as <?js= firstName ?> <?js= lastName ?>.
   include script/default
   block afterFooter

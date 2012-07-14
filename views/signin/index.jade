@@ -1,7 +1,10 @@
 extends ../layout
 
 block content
-  if signup
+  - if (typeof(error) !== 'undefined')
+    .row.well.span6.offset3
+      p #{error}
+  - if (signup)
     .row.well.span6.offset3
       h2 Sign up
       br
@@ -41,7 +44,7 @@ block content
               p To receive kudos via text.
           div(class='form-actions')
             input(type='submit',name='submit',value='Sign up')
-  else
+  - else
     .row.well.span6.offset3
       h2 Sign in
       br

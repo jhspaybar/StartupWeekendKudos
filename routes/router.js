@@ -22,4 +22,5 @@ module.exports = function(app) {
   app.get('/signup', signinController.signinGet);
   app.post('/signin', signinController.signinPut);
   app.post('/signup', signinController.signinPost);
+  app.get('/signout', signinController.signinDel);
 }
