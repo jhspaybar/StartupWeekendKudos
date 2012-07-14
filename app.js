@@ -51,6 +51,34 @@ app.configure('development', function(){
 routes(app); //Pass the app object to our routes file to register all of our routes
 
 var port = process.env.PORT || 3000;//Get Heroku required port, or dev host...
-http.createServer(app).listen(port);//Start it all up!
+var server = http.createServer(app);//Start it all up!
+var io = require('socket.io').listen(server);
+
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+});
+
+io.sockets.on('connection', function (socket) {
+  socket.emit('news', { kudo: 
+    {
+      message: 'TestMessage',
+      user: 'bob'
+    }
+  });
+  socket.on('getMore', function(data) {
+    socket.emit('news', { kudo: 
+      {
+        message: 'TestMessage',
+        user: 'bob'
+      }
+    });
+  })
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
+
+server.listen(port);
 
 console.log("Express server listening on port " + port);//Log that our server has started to the console

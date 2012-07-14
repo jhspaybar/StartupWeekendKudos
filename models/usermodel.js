@@ -12,7 +12,8 @@ var UserSchema = new Schema({
   photoref: {type: String, required: true},
   twitter: {type: String, required: true},
   linkedin: {type: String, required: true},
-  privacy: {type: Number, required: true}
+  privacy: {type: Number, required: true},
+  optout: {type: Boolean, required: true}
 });
 
 UserSchema.virtual('name').get(function() {

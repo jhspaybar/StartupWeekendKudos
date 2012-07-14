@@ -13,6 +13,7 @@ module.exports = function(app) {
   
   //Root Paths
   app.get('/', rootController.home);
+  app.get('/stream', rootController.stream);
   
   //Profile Paths
   app.get('/profile', profileController.profile); 
