@@ -1,4 +1,5 @@
 var rootController = require('../controllers/rootcontroller');
+var signinController = require('../controllers/signincontroller');
 
 module.exports = function(app) {
   app.get('*', function(req, res, next) {
@@ -11,4 +12,9 @@ module.exports = function(app) {
   
   //Root Paths
   app.get('/', rootController.home);
+
+  // Signup Paths
+  app.get('/signin', signinController.signinGet);
+  app.post('/signin', signinController.signinPost);
+  app.post('/signup', signinController.signinPut);
 }
