@@ -1,0 +1,29 @@
+!!! 5
+html(lang='en')
+  head
+    title #{title}
+    include style/default
+    block headData
+  body(style='padding-top: 60px; padding-bottom: 60px;')
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='/') 
+            i.icon-briefcase.icon-white
+            |Recognize
+          .nav-collapse
+            ul.nav.pull-left
+              li.active
+                a(href='/nav') Nav Item
+            ul.nav.pull-right
+              li
+                a(href='/signup') Sign up!
+                
+    .container
+      block content
+  include script/default
+  block afterFooter

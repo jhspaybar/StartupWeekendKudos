@@ -1,0 +1,14 @@
+var rootController = require('../controllers/rootcontroller');
+
+module.exports = function(app) {
+  app.get('*', function(req, res, next) {
+    if(req.headers['x-forwarded-proto'] && req.headers['x-forwarded-proto'] === 'http') {
+      res.redirect('https://' + req.headers.host + req.url);
+    } else {
+      next();
+    }
+  });
+  
+  //Root Paths
+  app.get('/', rootController.home);
+}
