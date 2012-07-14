@@ -42,6 +42,10 @@ app.configure(function(){
   app.use(express.session({ secret: "recognize-dev", store: new RedisStore }));//Connect to redis for our sessions so we can scale horizontally
   app.use(express.methodOverride());
   app.use(app.router);
+
+  app.locals.use(function(req, res) {
+    app.locals.session = req.session;
+  });
 });
 
 app.configure('development', function(){

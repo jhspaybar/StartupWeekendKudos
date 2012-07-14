@@ -20,6 +20,8 @@ module.exports = function(app) {
 
   // Signup Paths
   app.get('/signin', signinController.signinGet);
-  app.post('/signin', signinController.signinPost);
-  app.post('/signup', signinController.signinPut);
+  app.get('/signup', signinController.signinGet);
+  app.post('/signin', signinController.signinPut);
+  app.post('/signup', signinController.signinPost);
+  app.get('/signout', signinController.signinDel);
 }
