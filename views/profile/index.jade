@@ -6,12 +6,12 @@ block content
     .well.span5 
       .row 
         .span2
-          img(class='picture', src='http://www.almostsavvy.com/wp-content/uploads/2011/04/profile-photo.jpg')
-        .span2
-          p.profiletext #{firstname} #{lastname} 
-          p.profiletext #{company} 
-          p.profiletext #{geoloc}
-          p.profiletext #{rating} Kudos! 
+          img.picture(src='#{photoref}', height='100%', width='100%')
+         .span2
+           p.profiletext #{firstname} #{lastname} 
+           p.profiletext #{company} 
+           p.profiletext #{geoloc}
+           p.profiletext #{rating} Kudos! 
     
     .well.span5.offset.5 b
 
