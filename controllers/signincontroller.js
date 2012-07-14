@@ -1,11 +1,11 @@
 var sys = require('sys');
 
 exports.signinGet = function(req, res) {
-  res.render('signin/index', {title: 'Sign up now!'});
+  res.render('signin/index', {title: 'Sign up now!',
+                              signup: req.param('signup') != undefined});
 }
 
 exports.signinPost = function(req, res) {
-  console.log(req.param('name', null));
   res.redirect('/');
 }
 
