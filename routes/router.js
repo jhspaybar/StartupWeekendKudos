@@ -1,4 +1,5 @@
 var rootController = require('../controllers/rootcontroller');
+var profileController = require('../controllers/profilecontroller');
 
 module.exports = function(app) {
   app.get('*', function(req, res, next) {
@@ -11,4 +12,7 @@ module.exports = function(app) {
   
   //Root Paths
   app.get('/', rootController.home);
+  
+  //Profile Paths
+  app.get('/profile', profileController.profile); 
 }
