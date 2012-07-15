@@ -55,13 +55,15 @@
             margin: 0;
             
         }
+        #kudo_compose label {
+            font-size: 16px;
+        }
             #kudo_column_1 .control-group {
                 margin-top: 5px;
             }
                 #kudo_column_1 label {
                     width: 60px;
                     float: left;
-                    font-size: 16px;
                     text-align: left !important;
                 }
                 #kudo_column_1 input[type="text"] {
@@ -69,16 +71,24 @@
                 }
                 #kudo_column_1 textarea {
                     width: 330px;
+                    height: 100px;
                 }
                 .kudo_tags_column {
-                    width: 170px;
+                    width: 160px;
                     padding: 0 10px 0 0;
                     float: left;
                     overflow: hidden;
                 }
+                #kudo_tags_column_2 {
+                    width: 190px;
+                }
+                    #kudo_tags_column_2 label {
+                        width: 170px;
+                    }
                     .kudo_tags_column .controls {
                         width: 100%;
                         clear: both;
+                        padding-top: 5px !important;
                     }
                         .kudo_tags_column input,
                         .kudo_tags_column label,
