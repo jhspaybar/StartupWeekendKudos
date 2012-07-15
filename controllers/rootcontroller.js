@@ -1,29 +1,31 @@
 var Kudo = require('../models/kudomodel');
 var User = require('../models/usermodel');
+var async = require('async');
 
 exports.home = function(req, res) {
   Kudo.find({}).sort('date', -1).slice([0,10]).exec( function(error, docs) {
     var recentKudos = [];
-    for (var i = 0; i < Math.min(10, docs.length); i++) {
+    async.forEach(docs, function(doc, callback) {
       var newKudo = {};
-      newKudo.content = docs[i].content;
-/*      User.findOne({_id: docs[i].creator}, function(err, user) {
+      newKudo.content = doc.content;
+      User.findOne({_id: doc.creator}, function(err, user) {
+        console.log(user);
         newKudo.creator = user.name;
-        User.findOne({_id: docs[i].targetuser}, function(err, user) {
-          newKudo.photo = '//www.almostsavvy.com/wp-content/uploads/2011/04/profile-photo.jpg';
+        User.findOne({_id: doc.targetuser}, function(err, user) {
+                      console.log(user);
+          newKudo.photo = user.photoref || '/image/profile-photo.png';
           newKudo.date = 'July 15';
           recentKudos.push(newKudo);
+          callback(null, 0);
         });
-      });*/
-      newKudo.photo = '//www.almostsavvy.com/wp-content/uploads/2011/04/profile-photo.jpg';
-      newKudo.date = 'July 15';
-      newKudo.creator = 'Melissa Winstanley';
-      recentKudos.push(newKudo);
-    }
+      });
+    }, function(err) {
+      console.log(recentKudos);
+      res.render('index', {title: 'Recognize.com -- Give and Get Recognition!',
+                           recent: recentKudos});
+      
+    });
 
-    console.log(recentKudos);
-    res.render('index', {title: 'Recognize.com -- Give and Get Recognition!',
-                         recent: recentKudos});
   });
 };
 

@@ -22,7 +22,7 @@ exports.compose = function(req, res) {
   res.render('kudo/compose.jade', {
 	  kudee: 'George Enescu'
   });
-}
+};
 
 
 exports.submitPost = function(req, res) {
@@ -64,7 +64,7 @@ exports.submitPost = function(req, res) {
     },
     function(callback) {
       if(req.session._id) {
-        creatorid = req.session._id
+        creatorid = req.session._id;
         callback(null, req.session._id);
       } else {
         User.findOne({email: fromemail}, function(error, doc) {
@@ -117,8 +117,8 @@ exports.submitPost = function(req, res) {
           
           var message = '<div class="row"><div class="kudopicturespan">' +
           '<img src="https://cacm.acm.org/system/assets/0000/7989/51812.bbcnews.ruchi_sanghvi_facebook.large.jpg?1341312421&1337358501" height="60px" width="60px" class="picture recommender_picture"></div>' +
-          '<div class="shoutoutspan"><div class="shoutout" style="margin: 0 0 0 0; width: 100%; height:100%;">' + kudo.content + '</div></div></div>'+
-          '<div class="row"><div class="creator">' + doc.firstname + ' ' + doc.lastname[0].toUpperCase() + '.</div>'+
+          '<div class="shoutoutspan" style="margin: 0 10 0 10; width: 90%; height:100%;"><div class="shoutout">' + kudo.content + '</div></div></div>'+
+          '<div class="row" style="margin-left:50px"><div class="creator">' + doc.firstname + ' ' + doc.lastname[0].toUpperCase() + '.</div>'+
           '<div class="date">Sent July 15</div></div>';
           redisPub.publish('kudostream', message);
         });
