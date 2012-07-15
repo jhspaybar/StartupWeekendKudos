@@ -68,12 +68,14 @@ heading {
 
 .kudobox {
   padding: 15px;
-  margin-left: 20%;
   height: 100%;
   -moz-box-shadow: 0px 3px 3px #888888;
   -webkit-box-shadow: 0px 3px 3px #888888;
   box-shadow:2px 2px 2px #888888;
   background-color: white;
+  margin-top: -30px;
+  width: 88%;
+  margin-left: 3%;
 }
 
 .span5 {
@@ -83,15 +85,21 @@ heading {
 .kudoheading {
   font-family: 'Squada One';
   font-size: 215%;
-  margin-top: 2%;
+  margin-top: 0%;
+  padding-top: 3%;
   margin-left: 3%;
   color: #333333;
   text-shadow: black 0.05em 0.05em 0.05em;
   text-align: center;
 }
 
+.map {
+  margin-left: 30%;
+  margin-top: 30px;
+}
+
 .cast {
-  margin-left: 12%;
+  margin-left: 5px;
 }
 
 .picturespan {
@@ -105,7 +113,7 @@ heading {
 }
 
 .span2 {
-  margin-left: -10px;
+  margin-left: -20px;
 }
 
 .profiletextspan {
@@ -142,8 +150,8 @@ heading {
 .rectangle {
  background: #555555;
  height: 50px;
- width: 104.5%;
  position: relative;
+ width: 104%;
  left:-15px;
  top: 30px;
  margin-bottom: 15%;
@@ -158,17 +166,13 @@ heading {
 .rectanglekudo {
  background: #F0FF00;
  height: 50px;
- width: 86%;
+ width: 100%;
  position: relative;
- left: 17%;
  top: 30px;
- margin-bottom: 5%;
- float: left;
  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  z-index: 100; /* the stack order: foreground */
- margin-bottom: 10%;
 }
 
 .shoutout {
@@ -179,7 +183,7 @@ heading {
   margin-left: 3%;
   padding: 2%;
   width: 75%;
-  margin-top: -20%;  
+  margin-top: -15%;
   margin-left: 20%;
   height: 200%; 
   margin-bottom: 5%;
@@ -194,8 +198,8 @@ heading {
 .date {
   color: #0C72C8;
   font-size: 80%;
-  margin-left: 80%;
-  margin-top: -5%;
+  margin-left: 83%;
+  margin-top: -3%;
   padding-bottom: 5%;
 }
 
@@ -203,7 +207,7 @@ heading {
 .creator {
   font-family: 'Squada One';
   font-size: 100%;
-  margin-top: -5%;
+  margin-top: -4%;
   margin-left: 9%;
 }
 
@@ -214,8 +218,8 @@ heading {
  height:0px;
  width:0px;
  position: relative;
- left: -8%;
  top: 65px;
+ left: -8%;
  z-index: -1; /* displayed under bubble */
 }
 
@@ -226,8 +230,8 @@ heading {
  height:0px;
  width:0px;
  position: relative;
- top: 65px;
- left: 13%;
+ top: 18px;
+ left: -3%;
  z-index: -1; /* displayed under bubble */
 } 
 
@@ -238,8 +242,8 @@ heading {
  height:0px;
  width:0px;
  position: relative;
- left: 99.5%;
- top: 35px;
+ left: 97%;
+ top: -10px;
  z-index: -1; /* displayed under bubble */
 }
 
