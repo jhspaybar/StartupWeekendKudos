@@ -251,7 +251,7 @@ heading {
  height:0px;
  width:0px;
  position: relative;
- top: 18px;
+ top: 17px;
  left: -3%;
  z-index: -1; /* displayed under bubble */
 } 
@@ -264,7 +264,7 @@ heading {
  width:0px;
  position: relative;
  left: 97%;
- top: -10px;
+ top: -13px;
  z-index: -1; /* displayed under bubble */
 }
 
