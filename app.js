@@ -63,19 +63,13 @@ routes(app); //Pass the app object to our routes file to register all of our rou
 
 var port = process.env.PORT || 3000;//Get Heroku required port, or dev host...
 var server = http.createServer(app);//Start it all up!
-var io = require('socket.io').listen(server);
+
+var io = require('socket.io').listen(server); //create our socket server
 
 io.configure(function () {
   io.set("transports", ["xhr-polling"]);
   io.set("polling duration", 10);
-});
-
-io.redis = new RedisStore({
-  host: app.set('redisHost'),
-  port: app.set('redisPort'),
-  db: app.set('redisDb'),
-  pass: app.set('redisPass')
-});
+});//Configure our sockets
 
 homeStream(io);
 
