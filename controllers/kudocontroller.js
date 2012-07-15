@@ -6,7 +6,7 @@ exports.compose = function(req, res) {
 
 
 exports.submitPost = function(req, res) {
-  
+  // Send data to DB here.
 }
 
 exports.submitGet = function(req, res) {  

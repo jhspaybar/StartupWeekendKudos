@@ -1,13 +1,14 @@
 
 (function(){
     
-    var ovid = 'overlay_container',
+    var ovid = 'modal_container',
         $ovcon = $('#'+ovid);
     
     // Clicking on the Compose button:
-    $('#compose_kudo').click(function(){
+    $('.kudo_compose').click(function(e){
+        e.preventDefault();
         if($ovcon.length < 1){
-            $('body').append('<div id="'+ovid+'" />');
+            $('body').append('<div id="'+ovid+'" class="modal hide" />');
         }
         $.ajax({
             type: 'get',
@@ -20,6 +21,18 @@
     });
     
     // On submit of the Compose form:
+    $('#kudo_submit').live('click', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'post',
+            dataType: 'html',
+            data: $('#kudo_form').serialize(),
+            url: '/kudo/submit',
+            success: function(data, textStatus, jqXHR){
+                $('#'+ovid).html(data);                
+            }
+        });
+    });
     
 })();
     
