@@ -10,10 +10,10 @@ exports.home = function(req, res) {
       newKudo.content = doc.content;
       User.findOne({_id: doc.creator}, function(err, user) {
         console.log(user);
-        newKudo.creator = 'Melissa W.';
         User.findOne({_id: doc.targetuser}, function(err, user) {
                       console.log(user);
           newKudo.photo = user.photoref || '/image/profile-photo.png';
+          newKudo.creator = user.firstname;
           newKudo.date = 'July 15';
           recentKudos.push(newKudo);
           callback(null, 0);
