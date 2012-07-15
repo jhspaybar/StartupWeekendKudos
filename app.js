@@ -4,6 +4,7 @@
 
 var express = require('express')
   , routes = require('./routes/router')
+  , homeStream = require('./socket/homestream')
   , http = require('http')
   , https = require('https')
   , lessMiddleware = require('less-middleware')
@@ -23,7 +24,7 @@ var express = require('express')
 
 var app = express();
 
-var connectionString = process.env.MONGOHQ_URL || 'mongodb://localhost/MassEducateDev'; //Get Heroku connection, or dev host...
+var connectionString = process.env.MONGOHQ_URL || 'mongodb://localhost/Recognize'; //Get Heroku connection, or dev host...
 mongoose.connect(connectionString); //Call only once in the application
 
 app.configure(function(){
@@ -56,6 +57,18 @@ app.configure('development', function(){
 routes(app); //Pass the app object to our routes file to register all of our routes
 
 var port = process.env.PORT || 3000;//Get Heroku required port, or dev host...
-http.createServer(app).listen(port);//Start it all up!
+var server = http.createServer(app);//Start it all up!
+var io = require('socket.io').listen(server);
+
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+});
+
+io.redis = new RedisStore;
+
+homeStream(io);
+
+server.listen(port);
 
 console.log("Express server listening on port " + port);//Log that our server has started to the console

@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  .row
-    .span6.offset3
-      p Welcome to Recognize.com, where you and your co-workers can Regonize the good work each of you does!
-    .span1
-      p More Testing
-  .row
-    .span2.offset8
-      p Testing
+  .row#realtime
+  
+block afterFooter
+  script(src='/socket.io/socket.io.js')
+  script
+    var socket = io.connect('http://localhost:3000');
+    socket.on('kudostream', function (data) {
+      $('#realtime').prepend('<div class="row span12"><p>' +data.user+ '</p>' + '<p>' +data.message+ '</p>');
+    });

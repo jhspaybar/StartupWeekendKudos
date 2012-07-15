@@ -20,7 +20,7 @@ html(lang='en')
               li.active
                 a(href='/nav') Nav Item
             ul.nav.pull-right
-              - if (typeof(session._id) !== 'undefined')
+              - if (typeof session._id !== 'undefined')
                 li
                   a(href='/profile/#{session._id}') #{session.user}
                 li
