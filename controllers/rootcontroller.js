@@ -10,7 +10,7 @@ exports.home = function(req, res) {
       newKudo.content = doc.content;
       User.findOne({_id: doc.creator}, function(err, user) {
         console.log(user);
-        newKudo.creator = user.firstName;
+        newKudo.creator = user.firstname;
         User.findOne({_id: doc.targetuser}, function(err, user) {
                       console.log(user);
           newKudo.photo = user.photoref || '/image/profile-photo.png';
