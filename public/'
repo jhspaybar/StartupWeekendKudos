@@ -1,27 +1,16 @@
 .picture {
-  border: 1px solid white;
+  border: 1px solid black;
   margin-bottom: 10px;
   margin-top: -5px;
-  -moz-box-shadow: 0px 3px 3px #888888;
-  -webkit-box-shadow: 0px 3px 3px #888888;
-  box-shadow:3px 3px 3px #888888;
-}
-
-.recommender_picture {
-  border: 1px solid white;
-  margin-bottom: 10px;
-  margin-top: -5px;
-  -mox-box-shadow: 0px 3px 3px #888888;
-  -webkit-box-shadow: 0px 3px 3px #888888;
-  box-shadow:3px 3px 3px #888888;
 }
 
 .profiletext {
   font-size: 130%;
   font-family: 'Squada One';
-  color: #88888a;
+  color: #696969;
   margin-bottom: 1%;
   padding-left: 20px;
+
 }
 
 heading {
@@ -33,7 +22,7 @@ heading {
 
 .nameheading {
   font-family: 'Squada One';
-  font-size: 180%;
+  font-size: 230%;
   padding-left: 10%;
   padding-bottom: 5%;
 }
@@ -44,64 +33,39 @@ heading {
   margin-top: 3%;
   margin-left: 3%;
   color: #F0FF00;
-  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .profilebox {
+  border: 2px solid #696969;
   padding: 25px;
   margin-top: 20px;
-  -moz-box-shadow: 0px 3px 3px #888888;
-  -webkit-box-shadow: 0px 3px 3px #888888;
-  box-shadow: 5px 5px 5px #888888;
-  background-color: white;
 }
 
 .influencebox {
+  border: 2px solid #696969;
   padding: 15px;
   margin-top: 20px;
   height: 120px;
-  -moz-box-shadow: 0px 3px 3px #888888;
-  -webkit-box-shadow: 0px 3px 3px #888888;
-  box-shadow:5px 5px 5px #888888;
-  background-color: white;
 }
 
 .kudobox {
+  border: 2px solid #696969;
   padding: 15px;
-  margin-left: 20%;
-  height: 100%;
-  -moz-box-shadow: 0px 3px 3px #888888;
-  -webkit-box-shadow: 0px 3px 3px #888888;
-  box-shadow:2px 2px 2px #888888;
-  background-color: white;
-}
-
-.span5 {
-   margin-top: 0%;
+  margin-top: 0%;
+  height: 100px;
 }
 
 .kudoheading {
   font-family: 'Squada One';
-  font-size: 215%;
+  font-size: 201%;
   margin-top: 2%;
   margin-left: 3%;
-  color: #333333;
-  text-shadow: black 0.05em 0.05em 0.05em;
-  text-align: center;
-}
-
-.cast {
-  margin-left: 12%;
+  color: #696969;
 }
 
 .picturespan {
   width: 30%;
   padding-top: 5px;
-}
-
-.kudopicturespan {
-  width: 40%
-  padding-left: -20px;
 }
 
 .span2 {
@@ -118,13 +82,6 @@ heading {
   margin-top: -10px;
 }
 
-.kudostotal {
-  font-family: 'Squada One';
-  margin-top: 15%;
-  margin-left: 38%;
-  font-size: 120%;
-}
-
 .ratingtext {
   padding-top: 15%;
   font-family: 'Squada One';
@@ -139,8 +96,9 @@ heading {
   margin-left: 10%;
 }
 
+
 .rectangle {
- background: #555555;
+ background: #696969;
  height: 50px;
  width: 104.5%;
  position: relative;
@@ -158,53 +116,16 @@ heading {
 .rectanglekudo {
  background: #F0FF00;
  height: 50px;
- width: 86%;
+ width: 103%;
  position: relative;
- left: 17%;
+ left:-15px;
  top: 30px;
- margin-bottom: 5%;
+ margin-bottom: 15%;
  float: left;
  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  z-index: 100; /* the stack order: foreground */
- margin-bottom: 10%;
-}
-
-.shoutout {
-  -moz-box-shadow: 0px 0px 0px white;
-  -webkit-box-shadow: 0px 0px 0px white;
-  box-shadow: 0px 0px 0px white; 
-  border: 1px dashed #88888A;
-  margin-left: 3%;
-  padding: 2%;
-  width: 75%;
-  margin-top: -20%;  
-  margin-left: 20%;
-  height: 200%; 
-  margin-bottom: 5%;
-}
-
-.kudorow {
-  margin-left: -8%;
-  margin-bottom: 15px;
-  
-}
-
-.date {
-  color: #0C72C8;
-  font-size: 80%;
-  margin-left: 80%;
-  margin-top: -5%;
-  padding-bottom: 5%;
-}
-
-
-.creator {
-  font-family: 'Squada One';
-  font-size: 100%;
-  margin-top: -5%;
-  margin-left: 9%;
 }
 
 .triangle-l {
@@ -220,26 +141,27 @@ heading {
 }
 
 .triangle-lkudo {
- border-color: transparent #F0FF00 transparent transparent;
+ border-color: transparent #7d90a3 transparent transparent;
  border-style:solid;
  border-width:15px;
  height:0px;
  width:0px;
  position: relative;
  top: 65px;
- left: 13%;
+ left: -4.5%;
  z-index: -1; /* displayed under bubble */
 } 
 
 .triangle-r {
- border-color: transparent transparent transparent #F0FF00;
+ border-color: transparent transparent transparent #7d90a3;
  border-style:solid;
  border-width:15px;
  height:0px;
  width:0px;
  position: relative;
- left: 99.5%;
+ left: 100%;
  top: 35px;
  z-index: -1; /* displayed under bubble */
 }
+
 
