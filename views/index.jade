@@ -10,7 +10,7 @@ block content
 block afterFooter
   script(src='/socket.io/socket.io.js')
   script
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect('/');
     socket.on('kudostream', function (data) {
-      $('#realtime').prepend('<div class="row span12"><p>' +data.user+ '</p>' + '<p>' +data.message+ '</p>');
+      $('#realtime').prepend('<div class="row span12"><p>'+data+'</p></div>');
     });
