@@ -106,7 +106,15 @@ exports.submitPost = function(req, res) {
       if(error) {
         console.log(error);
       } else {
-        redisPub.publish('kudostream', JSON.stringify(kudo));
+        var cuser = User.findOne({_id: kudo.creator}, function(error, doc) {
+          
+          var message = '<div class="row"><div class="kudopicturespan">' +
+          '<img src="https://cacm.acm.org/system/assets/0000/7989/51812.bbcnews.ruchi_sanghvi_facebook.large.jpg?1341312421&1337358501" height="60px" width="60px" class="picture recommender_picture"></div>' +
+          '<div class="shoutoutspan"><div class="shoutout">' + kudo.content + '</div></div></div>'+
+          '<div class="row"><div class="creator">' + doc.firstname + ' ' + doc.lastname[0].toUpperCase() + '.</div>'+
+          '<div class="date">Sent ' +kudo.date+ '</div></div>';
+          redisPub.publish('kudostream', message);
+        });
       }
     });
   });
