@@ -25,7 +25,6 @@ exports.home = function(req, res) {
                            recent: recentKudos});
       
     });
-
   });
 };
 

@@ -38,6 +38,9 @@ exports.signinPost = function(req, res) {
           req.session.regenerate(function(err) {
             req.session.user = saved.email;
             req.session._id = saved.id;
+            req.session.firstname = saved.firstname;
+            req.session.lastname = saved.lastname;
+            req.session.email = saved.email;
             console.log('User created successfully');
             res.redirect('/linkin');
           });
@@ -70,6 +73,9 @@ exports.signinPut = function(req, res) {
           req.session.regenerate(function(err) {
             req.session.user = user.email;
             req.session._id = user.id;
+            req.session.firstname = user.firstname;
+            req.session.lastname = user.lastname;
+            req.session.email = user.email;
             if (user.linkedin) {
               res.redirect('/profile');
             } else {

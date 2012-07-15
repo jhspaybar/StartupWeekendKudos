@@ -18,11 +18,11 @@
                     div(class='control-group')
                         div(class='controls')
                             label(for='from_name',class='control-label') Name:
-                            input(type='text',name='from_name')
+                            input(type='text',name='from_name',value='#{name}')
                     div(class='control-group')
                         div(class='controls')
                             label(for='from_email',class='control-label') Email:
-                            input(type='text',name='from_email')
+                            input(type='text',name='from_email',value='#{email}')
                     heading Message
                     div(class='control-group')
                         div(class='controls')
@@ -69,5 +69,5 @@
                             label(for='privacy',class='control-label') Private
                 div(id='kudo_submit_box')
                     a(href='#',class='btn',data-dismiss='modal') Close
-                    a(href='#',class='btn btn-primary',id='kudo_submit') Save changes    
+                    a(href='#',class='btn btn-primary',id='kudo_submit') Cast    
                 
