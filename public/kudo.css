@@ -116,3 +116,6 @@
     #kudo_submit_thanks {
         padding: 40px;
     }
+        #kudo_submit_thanks heading {
+            font-size: 300%;
+        }
