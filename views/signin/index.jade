@@ -5,45 +5,45 @@ block content
     .row.well.span6.offset3
       p #{error}
   - if (signup)
-    .row.well.span6.offset3
-      h2 Sign up
-      br
-      form(action='/signup',method='post',class='form-horizontal')
-        fieldset
-          div(class='control-group')
-            label(for='firstname',class='control-label') First name
-            div(class='controls')
-              input(type='text',name='firstname')
-              |  Required
-          div(class='control-group')
-            label(for='lastname',class='control-label') Last name
-            div(class='controls')
-              input(type='text',name='lastname')
-              |  Required
-          div(class='control-group')
-            label(for='email',class='control-label') Email
-            div(class='controls')
-              input(type='text',name='email')
-              |  Required
-          div(class='control-group')
-            label(for='password',class='control-label') Password
-            div(class='controls')
-              input(type='password',name='password')
-              |  Required
-          div(class='control-group')
-            label(for='password2',class='control-label') Confirm password
-            div(class='controls')
-              input(type='password',name='password2')
-              |  Required
-          div(class='control-group')
-            label(for='cellphone',class='control-label') Cell phone
-            div(class='controls')
-              input(type='text',name='cellphone',class='span1')
-              input(type='text',name='cellphone',class='span1')
-              input(type='text',name='cellphone',class='span1')
-              p To receive kudos via text.
-          div(class='form-actions')
-            input(type='submit',name='submit',value='Sign up')
+    .center
+      .span5
+        .rectangle-login
+          .influenceheading Sign up
+        .triangle-llogin
+        .triangle-rlogin
+        .signinbox
+          .row
+            form(action='/signup',method='post',class='form-horizontal form')
+              fieldset
+                div(class='control-group')
+                  label(for='firstname',class='control-label') First name
+                  div(class='controls')
+                    input(type='text',name='firstname',class='span2')
+                div(class='control-group')
+                  label(for='lastname',class='control-label') Last name
+                  div(class='controls')
+                    input(type='text',name='lastname',class='span2')
+                div(class='control-group')
+                  label(for='email',class='control-label') Email
+                  div(class='controls')
+                    input(type='text',name='email',class='span2')
+                div(class='control-group')
+                  label(for='password',class='control-label') Password
+                  div(class='controls')
+                    input(type='password',name='password',class='span2')
+                div(class='control-group')
+                  label(for='password2',class='control-label') Confirm password
+                  div(class='controls')
+                    input(type='password',name='password2',class='span2')
+                div(class='control-group')
+                  label(for='cellphone',class='control-label') Cell phone
+                  div(class='controls')
+                    input(type='text',name='cellphone',class='span1')
+                    input(type='text',name='cellphone',class='span1')
+                    input(type='text',name='cellphone',class='span1')
+                    p (Optional) To receive kudos via text.
+                div(class='form-actions')
+                  input(type='submit',name='submit',value='Sign up')
   - else
     .center
       .span5
@@ -53,7 +53,7 @@ block content
         .triangle-rlogin
         .signinbox
           .row
-            form(action='/signin',method='post',class='form-horizontal')
+            form(action='/signin',method='post',class='form-horizontal form')
               fieldset
                 div(class='control-group')
                   label(for='email',class='control-label') Email
