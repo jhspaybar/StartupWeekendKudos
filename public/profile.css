@@ -1,13 +1,16 @@
 .picture {
-  border: 1px solid black;
+  border: 1px solid white;
   margin-bottom: 10px;
   margin-top: -5px;
+  -moz-box-shadow: 0px 3px 3px #888888;
+  -webkit-box-shadow: 0px 3px 3px #888888;
+  box-shadow:3px 3px 3px #888888;
 }
 
 .profiletext {
   font-size: 130%;
   font-family: 'Squada One';
-  color: #696969;
+  color: #88888a;
   margin-bottom: 1%;
   padding-left: 20px;
 
@@ -17,7 +20,7 @@ heading {
   font-family: 'Squada One';
   padding-bottom: 0px;
   font-size: 170%;
-  padding-left: 20px;
+  padding-left: 10%;
 }
 
 .nameheading {
@@ -30,19 +33,47 @@ heading {
 .influenceheading {
   font-family: 'Squada One';
   font-size: 210%;
+  margin-top: 3%;
+  margin-left: 3%;
+  color: #F0FF00;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .profilebox {
-  border: 2px solid #696969;
   padding: 25px;
   margin-top: 20px;
+  -moz-box-shadow: 0px 3px 3px #888888;
+  -webkit-box-shadow: 0px 3px 3px #888888;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 .influencebox {
-  border: 2px solid #696969;
   padding: 15px;
   margin-top: 20px;
   height: 120px;
+  -moz-box-shadow: 0px 3px 3px #888888;
+  -webkit-box-shadow: 0px 3px 3px #888888;
+  box-shadow:5px 5px 5px #888888;
+}
+
+.kudobox {
+  padding: 15px;
+  margin-top: 0%;
+  margin-left: 20%;
+  height: 100px;
+  -moz-box-shadow: 0px 3px 3px #888888;
+  -webkit-box-shadow: 0px 3px 3px #888888;
+  box-shadow:2px 2px 2px #888888;
+}
+
+.kudoheading {
+  font-family: 'Squada One';
+  font-size: 215%;
+  margin-top: 2%;
+  margin-left: 3%;
+  color: #333333;
+  text-shadow: black 0.05em 0.05em 0.05em;
+  text-align: center;
 }
 
 .picturespan {
@@ -76,4 +107,77 @@ heading {
 .strengthspan {
   width: 40%;
   margin-left: 10%;
+}
+
+
+.rectangle {
+ background: #555555;
+ height: 50px;
+ width: 104.5%;
+ position: relative;
+ left:-15px;
+ top: 30px;
+ margin-bottom: 15%;
+ float: left;
+ -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+ -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+ -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+ z-index: 100; /* the stack order: foreground */
+}
+
+
+.rectanglekudo {
+ background: #F0FF00;
+ height: 50px;
+ width: 86%;
+ position: relative;
+ left: 17%;
+ top: 30px;
+ margin-bottom: 15%;
+ float: left;
+ -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+ -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+ -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+ z-index: 100; /* the stack order: foreground */
+}
+
+.triangle-l {
+ border-color: transparent #7d90a3 transparent transparent;
+ border-style:solid;
+ border-width:15px;
+ height:0px;
+ width:0px;
+ position: relative;
+ left: -8%;
+ top: 65px;
+ z-index: -1; /* displayed under bubble */
+}
+
+.triangle-lkudo {
+ border-color: transparent #F0FF00 transparent transparent;
+ border-style:solid;
+ border-width:15px;
+ height:0px;
+ width:0px;
+ position: relative;
+ top: 65px;
+ left: 13%;
+ z-index: -1; /* displayed under bubble */
+} 
+
+.triangle-r {
+ border-color: transparent transparent transparent #F0FF00;
+ border-style:solid;
+ border-width:15px;
+ height:0px;
+ width:0px;
+ position: relative;
+ left: 99.5%;
+ top: 35px;
+ z-index: -1; /* displayed under bubble */
+}
+
+hr {
+  border: 1px solid #C8C8C8;
+  width: 100%;
 }
