@@ -3,12 +3,16 @@ function onLoad() {
 
 function onLinkedInAuth() {
   // this must be the same domain as the application, where we write the cookie
-  IN.API.Profile("me").result(function(result) {
+  IN.API.Profile("me").fields(
+      ['id', 'pictureUrl', 'positions', 'location']).result(function(result) {
     $.ajax({
       type: 'POST',
       url: '/linkin',
       data: {linkedInID: result.values[0].id,
-             pictureUrl: result.values[0].pictureUrl}
+             pictureUrl: result.values[0].pictureUrl,
+             title: result.values[0].positions[0].title,
+             company: result.values[0].positions[0].company,
+             location: result.values[0].location}
     }).done(function(data) {
       window.location.replace('/profile');
     });

@@ -91,12 +91,15 @@ exports.linkinGet = function(req, res) {
 };
 
 exports.linkinPost = function(req, res) {
+  console.log(req);
   if (req.session._id) {
     console.log('updating linked in info');
     console.log(req.param('linkedInID'));
     User.findOne({_id: req.session._id}, function(err, user) {
       user.photoref = req.param('pictureUrl');
       user.linkedin = req.param('linkedInID');
+      user.geoloc = req.param('location');
+      req.param('positions')[0].
       user.save(function(err, saved) {
         // TODO: Handle error
       });
