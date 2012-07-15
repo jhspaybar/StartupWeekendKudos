@@ -19,8 +19,12 @@ exports.list = function(req, res) {
 }
 
 exports.compose = function(req, res) {
+  var email = req.session.email || '';
+  var name = (req.session.firstname || '') +' '+ (req.session.lastname || '');
   res.render('kudo/compose.jade', {
-	  kudee: 'George Enescu'
+	  kudee: 'George Enescu',
+	  email: email,
+	  name: name
   });
 }
 
@@ -76,8 +80,8 @@ exports.submitPost = function(req, res) {
             //res.redirect('/signin');
           } else {
             var namearray = fromname.split(/ (.+)?/)
-            var first = namearray[0];
-            var last = namearray.length > 1 ? namearray[1] : 'User';
+            var first = namearray[0] || 'Kudo';
+            var last = namearray.length > 1 ? namearray[1] || 'Kudo' : 'User';
             var creatoruser = new User({
               firstname: first,
               lastname: last,
