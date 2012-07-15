@@ -99,7 +99,7 @@ exports.linkinPost = function(req, res) {
   if (req.session._id) {
     console.log('updating linked in info');
     User.findOne({_id: req.session._id}, function(err, user) {
-      user.photoref = req.param('pictureUrl');
+      user.photoref = req.param('pictureUrl').replace('http:', '');
       user.linkedin = req.param('linkedInID');
       user.geoloc = req.param('location');
       user.title = req.param('title');
