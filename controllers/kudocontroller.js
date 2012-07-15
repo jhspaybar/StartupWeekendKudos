@@ -45,7 +45,8 @@ exports.submitPost = function(req, res) {
           });
           targetuser.save( function(error) {
             if(error) {
-              res.redirect('/');
+              console.log(error);
+              //res.redirect('/');
             } else {
               targetid = targetuser._id;
               callback(null, targetuser._id);
@@ -64,7 +65,8 @@ exports.submitPost = function(req, res) {
             creatorid = doc._id;
             callback(doc._id);
           } else if(doc !== null && !doc.autogen) {
-            res.redirect('/signin');
+            console.log(error);
+            //res.redirect('/signin');
           } else {
             var namearray = fromname.split(/ (.+)?/)
             var first = namearray[0];
@@ -79,7 +81,8 @@ exports.submitPost = function(req, res) {
             });
             creatoruser.save( function(error) {
               if(error) {
-                res.redirect('/');
+                console.log(error);
+                //res.redirect('/');
               } else {
                 creatorid = creatoruser._id;
                 callback(creatoruser._id);
@@ -108,8 +111,4 @@ exports.submitPost = function(req, res) {
     });
   });
   res.send('testing');
-}
-
-exports.submitGet = function(req, res) {  
-  res.redirect('/profile');
 }
