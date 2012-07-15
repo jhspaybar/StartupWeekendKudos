@@ -15,7 +15,8 @@
 	  "connect-redis": "1.4.0",
 	  "socket.io": "0.9.6",
 	  "redis": "0.7.2",
-	  "hiredis": "0.1.14"
+	  "hiredis": "0.1.14",
+	  "async": "0.1.2"
   }
   , "engines": {
     "node": "0.8.x",

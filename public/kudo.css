@@ -29,6 +29,12 @@
             margin: 0;
             
         }
+            #kudo_column_1 label {
+                width: 70px;
+                float: left;
+                font-size: 16px;
+                text-align: left !important;
+            }
             .kudo_tags_column {
                 width: 170px;
                 padding: 0 10px 0 0;
