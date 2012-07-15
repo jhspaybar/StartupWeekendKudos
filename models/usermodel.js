@@ -7,6 +7,7 @@ var UserSchema = new Schema({
   email: {type: String, required: true, unique: true},
   password: {type: String, required: true},
   cellphone: {type: String, required: false},
+  title: {type: String, required: false},
   company: {type: String, required: false},
   geoloc: {type: String, required: false},
   photoref: {type: String, required: false},

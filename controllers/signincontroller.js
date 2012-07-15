@@ -11,7 +11,7 @@ exports.signinPost = function(req, res) {
     var userHash = {firstname: req.param('firstname'),
                     lastname: req.param('lastname'),
                     email: req.param('email'),
-                    password: req.param('password'),
+                    password: hash,
                     privacy: 0};
     if (req.param('cellphone')) {
       userHash.cellphone = req.param('cellphone');
@@ -53,11 +53,15 @@ exports.signinPut = function(req, res) {
   User.findOne({email: address}, function(err, user) {
     if (!err && user) {
       bcrypt.compare(pw, user.password, function(err, matched) {
-        if (!err) {
+        if (!err && matched) {
           req.session.regenerate(function(err) {
             req.session.user = user.email;
             req.session._id = user.id;
-            res.redirect('/linkin');
+            if (user.linkedin) {
+              res.redirect('/profile');
+            } else {
+              res.redirect('/linkin');
+            }
           });
           return;
         }
@@ -91,15 +95,14 @@ exports.linkinGet = function(req, res) {
 };
 
 exports.linkinPost = function(req, res) {
-  console.log(req);
   if (req.session._id) {
     console.log('updating linked in info');
-    console.log(req.param('linkedInID'));
     User.findOne({_id: req.session._id}, function(err, user) {
       user.photoref = req.param('pictureUrl');
       user.linkedin = req.param('linkedInID');
       user.geoloc = req.param('location');
-      req.param('positions')[0].
+      user.title = req.param('title');
+      user.company = req.param('company');
       user.save(function(err, saved) {
         // TODO: Handle error
       });
