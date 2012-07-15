@@ -20,6 +20,18 @@
     });
     
     // On submit of the Compose form:
+    $('#kudo_form').submit(function(e){
+        $.ajax({
+            type: 'get',
+            dataType: 'html',
+            data: $('#kudo_form').serialize(),
+            url: '/kudo/submit',
+            success: function(data, textStatus, jqXHR){
+                $('#'+ovid).html(data);                
+            }
+        });
+        return false;
+    });
     
 })();
     

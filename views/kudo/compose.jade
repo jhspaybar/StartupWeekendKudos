@@ -1,7 +1,7 @@
 
-.row#kudo_compose
+#kudo_compose
     h2 Send a Kudo to #{kudee} 
-    form(action='/kudo/submit',method='post',class='form-horizontal')
+    form(action='/kudo/submit',method='post',class='form-horizontal',id='kudo_form')
         .well
             fieldset
                 div(class='control-group')
