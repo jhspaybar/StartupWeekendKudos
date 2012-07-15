@@ -1,50 +1,71 @@
 
-#kudo_compose.modal-body
-    h2 Send a Kudo to #{kudee} 
-    form(action='/kudo/submit',method='post',class='form-horizontal',id='kudo_form')
-        .kudo_column
-            fieldset
-                div(class='control-group')
-                    div(class='controls')
-                        label(for='to_email',class='control-label') To Email
-                        input(type='text',name='to_email')
-                div(class='control-group')
-                    div(class='controls')
-                        label(for='from_name',class='control-label') Your Name
-                        input(type='text',name='from_name')
-                div(class='control-group')
-                    div(class='controls')
-                        label(for='from_email',class='control-label') Your Email
-                        input(type='text',name='from_email')
-                div(class='control-group')
-                    label(for='message',class='control-label') Message
-                    div(class='controls')
-                        textarea(name='message')
-        .kudo_column
-            h2 Choose tags
-            fieldset
-                div(class='control-group')
-                    div(class='controls')
-                        input(type='checkbox',name='tags[]',value='leadership')
-                        label(for='leadership',class='control-label') Leadership
-                    div(class='controls')
-                        input(type='checkbox',name='tags[]',value='teamwork')
-                        label(for='teamwork',class='control-label') Teamwork
-                    div(class='controls')
-                        input(type='checkbox',name='tags[]',value='passion')
-                        label(for='passion',class='control-label') Passion
-            fieldset
-                div(class='control-group')
-                    div(class='controls')
-                        input(type='radio',name='privacy',value='public')
-                        label(for='privacy',class='control-label') Public
-                    div(class='controls')
-                        input(type='radio',name='privacy',value='private')
-                        label(for='privacy',class='control-label') Private
-            div(class='form-actions')
-                input(type='submit',name='submit',value='Submit',id='kudo_submit')
+#kudo_compose
+    .modal-header
+        button(class='close',data-dismiss='modal') x
+        h3 Send a Kudo
+    .modal-body
+        form(action='/kudo/submit',method='post',class='form-horizontal',id='kudo_form')
+            .kudo_column
+                fieldset
+                    div(class='control-group')
+                        div(class='controls')
+                            label(for='to_email',class='control-label') To Email
+                            input(type='text',name='to_email')
+                    div(class='control-group')
+                        div(class='controls')
+                            label(for='from_name',class='control-label') Your Name
+                            input(type='text',name='from_name')
+                    div(class='control-group')
+                        div(class='controls')
+                            label(for='from_email',class='control-label') Your Email
+                            input(type='text',name='from_email')
+                    div(class='control-group')
+                        label(for='message',class='control-label') Message
+                        div(class='controls')
+                            textarea(name='message')
+            .kudo_column
+                h3 Choose tags
+                fieldset
+                    div(class='control-group')
+                        .kudo_tags_column
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='leadership')
+                                label(for='leadership',class='control-label') Leadership
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='teamwork')
+                                label(for='teamwork',class='control-label') Teamwork
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='passion')
+                                label(for='passion',class='control-label') Passion
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='craft')
+                                label(for='passion',class='control-label') Craftsmanship
+                        .kudo_tags_column
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='creativity')
+                                label(for='leadership',class='control-label') Creativity
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='accountability')
+                                label(for='teamwork',class='control-label') Accountability
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='innovation')
+                                label(for='passion',class='control-label') Innovation
+                            div(class='controls')
+                                input(type='checkbox',name='tags[]',value='emotional')
+                                label(for='passion',class='control-label') Emotional Intelligence
+
+                fieldset
+                    div(class='control-group')
+                        div(class='controls')
+                            input(type='radio',name='privacy',value='public')
+                            label(for='privacy',class='control-label') Public
+                        div(class='controls')
+                            input(type='radio',name='privacy',value='private')
+                            label(for='privacy',class='control-label') Private
+                div(class='form-actions')
+                    input(type='submit',name='submit',value='Submit',id='kudo_submit')
+                        
                     
                     
                     
-                    
-                    
+                    f0ff00
