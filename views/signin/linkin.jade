@@ -1,0 +1,10 @@
+extends ../layout
+
+block headData
+  include ../script/linkin
+
+block content
+  p You are not logged in with LinkedIn. Log in now to view your connections.
+  .container
+    script(type='in/Login',data-onAuth='onLinkedInAuth')
+      | You are identified as <?js= firstName ?> <?js= lastName ?>.
