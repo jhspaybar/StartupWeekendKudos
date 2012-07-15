@@ -57,7 +57,11 @@ exports.signinPut = function(req, res) {
           req.session.regenerate(function(err) {
             req.session.user = user.email;
             req.session._id = user.id;
-            res.redirect('/linkin');
+            if (user.linkedin) {
+              res.redirect('/profile');
+            } else {
+              res.redirect('/linkin');
+            }
           });
           return;
         }
@@ -91,15 +95,14 @@ exports.linkinGet = function(req, res) {
 };
 
 exports.linkinPost = function(req, res) {
-  console.log(req);
   if (req.session._id) {
     console.log('updating linked in info');
-    console.log(req.param('linkedInID'));
     User.findOne({_id: req.session._id}, function(err, user) {
       user.photoref = req.param('pictureUrl');
       user.linkedin = req.param('linkedInID');
       user.geoloc = req.param('location');
-      req.param('positions')[0].
+      user.title = req.param('title');
+      user.company = req.param('company');
       user.save(function(err, saved) {
         // TODO: Handle error
       });
