@@ -2,29 +2,31 @@
 #kudo_compose
     .modal-header
         button(class='close',data-dismiss='modal') x
-        h3 Send a Kudo
+        h3 Cast a Kudo
     .modal-body
         form(action='/kudo/submit',method='post',class='form-horizontal',id='kudo_form')
-            .kudo_column
+            .kudo_column#kudo_column_1
                 fieldset
+                    h3 To
                     div(class='control-group')
                         div(class='controls')
-                            label(for='to_email',class='control-label') To Email
+                            label(for='to_email',class='control-label') Email:
                             input(type='text',name='to_email')
+                    h3 From
                     div(class='control-group')
                         div(class='controls')
-                            label(for='from_name',class='control-label') Your Name
+                            label(for='from_name',class='control-label') Name:
                             input(type='text',name='from_name')
                     div(class='control-group')
                         div(class='controls')
-                            label(for='from_email',class='control-label') Your Email
+                            label(for='from_email',class='control-label') Email:
                             input(type='text',name='from_email')
+                    h3 Message
                     div(class='control-group')
-                        label(for='message',class='control-label') Message
                         div(class='controls')
                             textarea(name='message')
-            .kudo_column
-                h3 Choose tags
+            .kudo_column#kudo_column_2
+                h3 Values
                 fieldset
                     div(class='control-group')
                         .kudo_tags_column
@@ -54,6 +56,7 @@
                                 input(type='checkbox',name='tags[]',value='emotional')
                                 label(for='passion',class='control-label') Emotional Intelligence
 
+                h3 Visibility
                 fieldset
                     div(class='control-group')
                         div(class='controls')
@@ -65,7 +68,4 @@
                 div(class='form-actions')
                     input(type='submit',name='submit',value='Submit',id='kudo_submit')
                         
-                    
-                    
-                    
-                    f0ff00
+                
