@@ -6,15 +6,14 @@ block headData
 block content
     br
     .span5.offset3
-      .row
+      .row(style='margin: 0 -10% 0 -10%;')
         .homeheader(style='font-family: arial; font-size: 160%')
           | Start praising your peers by casting a 
           a(href='',class='kudo_compose') 
             img(src='/img/kudo.png')
+          | .
           - if (!session._id)
-            p the easiest way to recognize their work achievements.
-          - else
-            .
+            p The easiest way to recognize their work achievements.
       .row
         .rectanglekudo
           .kudoheading KudoCasts Worldwide
