@@ -5,6 +5,7 @@
 var express = require('express')
   , routes = require('./routes/router')
   , http = require('http')
+  , https = require('https')
   , lessMiddleware = require('less-middleware')
   , mongoose = require('mongoose')
   , RedisStore = require('connect-redis')(express);

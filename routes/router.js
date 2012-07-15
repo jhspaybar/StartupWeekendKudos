@@ -15,7 +15,8 @@ module.exports = function(app) {
   app.get('/', rootController.home);
   
   //Profile Paths
-  app.get('/profile', profileController.profile); 
+  app.get('/profile', profileController.profile);
+  app.get('/profile/:_id', profileController.profile);
 
   // Signup Paths
   app.get('/signin', signinController.signinGet);
@@ -23,4 +24,6 @@ module.exports = function(app) {
   app.post('/signin', signinController.signinPut);
   app.post('/signup', signinController.signinPost);
   app.get('/signout', signinController.signinDel);
-}
+  app.get('/linkin', signinController.linkinGet);
+  app.post('/linkin', signinController.linkinPost);
+};

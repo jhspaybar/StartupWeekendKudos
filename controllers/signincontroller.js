@@ -3,9 +3,8 @@ var bcrypt = require('../node_modules/bcrypt/bcrypt.js');
 
 exports.signinGet = function(req, res) {
   res.render('signin/index', {title: 'Sign up now!',
-                              signup: req.originalUrl === '/signup',
-                              error: undefined});
-}
+                              signup: req.originalUrl === '/signup'});
+};
 
 exports.signinPost = function(req, res) {
   var afterHash = function(error, hash) {
@@ -22,13 +21,13 @@ exports.signinPost = function(req, res) {
       if (err) {
         res.render('signin/index', {title: 'Sign up now!',
                                     signup: true,
-                                    error: err});
+                                    error: 'Credentials incorrect'});
       } else {
         req.session.regenerate();
         req.session.user = saved.email;
         req.session._id = saved.id;
         console.log('User created successfully');
-        res.redirect('/profile');
+        res.redirect('/linkin');
       }
     });
   };
@@ -40,7 +39,7 @@ exports.signinPost = function(req, res) {
                                 signup: true,
                                 error: 'Password too short or did not match'});
   }
-}
+};
 
 exports.signinPut = function(req, res) {
   var address = req.param('email');
@@ -57,7 +56,7 @@ exports.signinPut = function(req, res) {
           req.session.regenerate(function(err) {
             req.session.user = user.email;
             req.session._id = user.id;
-            res.redirect('/profile');
+            res.redirect('/linkin');
           });
           return;
         }
@@ -67,9 +66,51 @@ exports.signinPut = function(req, res) {
       res.render('signin/index', responseVars);
     }
   });
-}
+};
 
 exports.signinDel = function(req, res) {
   req.session.destroy();
   res.redirect('/');
+};
+
+exports.linkinGet = function(req, res) {
+  if (req.session._id) {
+    var user = User.findOne({_id: req.session._id});
+    if (user) {
+      if (user.linkedin) {
+        res.redirect('/profile/' + user._id);
+      } else {
+        res.render('signin/linkin', {title: 'Link with LinkedIn'});
+      }
+      return;
+    }
+  }
+  res.redirect('/signin', {title: 'Sign up now!',
+                           signup: true});
+};
+
+exports.linkinPost = function(req, res) {
+  if (req.session._id) {
+    console.log(req.param('linkedInID'));
+    User.findOne({_id: req.session._id}, function(err, user) {
+      user.photoref = req.param('pictureUrl');
+      user.linkedin = req.param('linkedInID');
+      user.save(function(err, saved) {
+        // TODO: Handle error
+      });
+    });
+  }
+  res.redirect('/profile');
+};
+
+
+function getCookie(allCookies, name) {
+  var cookies = allCookies.split(';');
+  for (var i = 0; i < cookies.length; i++) {
+    var parts = cookies[i].split('=');
+    if (parts[0].trim() === name) {
+      return parts[1];
+    }
+  }
+  return null;
 }
