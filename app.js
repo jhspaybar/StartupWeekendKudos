@@ -53,6 +53,8 @@ app.configure(function(){
 
   app.locals.use(function(req, res) {
     app.locals.session = req.session;
+    app.locals.isProduction = process.env.NODE_ENV === 'production';
+    console.log('Using production api key: ' + app.locals.isProduction);
   });
 });
 
