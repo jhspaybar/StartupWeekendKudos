@@ -1,19 +1,32 @@
 extend ../layout
 
+block headData
+  link(href='http://fonts.googleapis.com/css?family=Squada+One', rel='stylesheet', type='text/css')
 
 block content
-  .row  
-    .well.span5 
-      .row 
-        .span2
-          img.picture(src='#{photoref}', height='100%', width='100%')
-         .span2
-           p.profiletext #{firstname} #{lastname} 
-           p.profiletext #{company} 
-           p.profiletext #{geoloc}
-           p.profiletext #{rating} Kudos! 
-    
-    .well.span5.offset.5 b
+    .span4
+      .profilebox   
+        .row 
+           .picturespan
+             img.picture(src='#{photoref}', height='110%', width='110%')
+           .profiletextspan
+             .nameheading #{firstname} #{lastname} 
+             p.profiletext #{position} at #{company} 
+             p.profiletext #{geoloc}
+        .row
+           .span2
+             heading.p.kudos Kudos Score:
+             p.ratingtext #{rating}
+           .strengthspan
+             heading Top Strengths:
+             p.profiletext 1. #{strength1}
+             p.profiletext 2. #{strength2}
+             p.profiletext 3. #{strength3} 
+      .influencebox.influenceheading Influence Reach    
+      .influencebox.influenceheading Gifts Funded 
+    .span7.row 
+      .influencebox.influenceheading Send a Kudo
+      .influencebox.influenceheading Kudocast
 
      
       

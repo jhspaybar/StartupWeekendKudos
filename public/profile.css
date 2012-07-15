@@ -1,8 +1,79 @@
 .picture {
   border: 1px solid black;
+  margin-bottom: 10px;
+  margin-top: -5px;
 }
 
 .profiletext {
-  padding-left: 20px;
   font-size: 130%;
+  font-family: 'Squada One';
+  color: #696969;
+  margin-bottom: 1%;
+  padding-left: 20px;
+
+}
+
+heading {
+  font-family: 'Squada One';
+  padding-bottom: 0px;
+  font-size: 170%;
+  padding-left: 20px;
+}
+
+.nameheading {
+  font-family: 'Squada One';
+  font-size: 230%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+
+.influenceheading {
+  font-family: 'Squada One';
+  font-size: 210%;
+}
+
+.profilebox {
+  border: 2px solid #696969;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.influencebox {
+  border: 2px solid #696969;
+  padding: 15px;
+  margin-top: 20px;
+  height: 120px;
+}
+
+.picturespan {
+  width: 30%;
+  padding-top: 5px;
+}
+
+.span2 {
+  margin-left: -10px;
+}
+
+.profiletextspan {
+  width: 60%;
+  margin-left: 0; 
+}
+
+.kudos {
+  padding-left: 40px;
+  margin-top: -10px;
+}
+
+.ratingtext {
+  padding-top: 15%;
+  font-family: 'Squada One';
+  font-size: 600%;
+  color: black;
+  text-align: center;
+  padding-left: 10%;
+}
+
+.strengthspan {
+  width: 40%;
+  margin-left: 10%;
 }
