@@ -13,7 +13,7 @@ var express = require('express')
 var app = express();
 
 app.configure('production', function () {
-  var redisUrl = url.parse(process.env.REDISTOGO_URL);
+  var redisUrl = require("url").parse(process.env.REDISTOGO_URL);
   var redisAuth = redisUrl.auth.split(':');  
   app.set('redisHost', redisUrl.hostname);
   app.set('redisPort', redisUrl.port);
