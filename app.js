@@ -9,17 +9,17 @@ var express = require('express')
   , lessMiddleware = require('less-middleware')
   , mongoose = require('mongoose')
   , RedisStore = require('connect-redis')(express);
-  
-  app.configure('production', function () {
-    var redisUrl = url.parse(process.env.REDISTOGO_URL);
-    var redisAuth = redisUrl.auth.split(':');  
-    app.set('redisHost', redisUrl.hostname);
-    app.set('redisPort', redisUrl.port);
-    app.set('redisDb', redisAuth[0]);
-    app.set('redisPass', redisAuth[1]);
-  });
 
 var app = express();
+
+app.configure('production', function () {
+  var redisUrl = url.parse(process.env.REDISTOGO_URL);
+  var redisAuth = redisUrl.auth.split(':');  
+  app.set('redisHost', redisUrl.hostname);
+  app.set('redisPort', redisUrl.port);
+  app.set('redisDb', redisAuth[0]);
+  app.set('redisPass', redisAuth[1]);
+});
 
 var connectionString = process.env.MONGOHQ_URL || 'mongodb://localhost/Recognize'; //Get Heroku connection, or dev host...
 mongoose.connect(connectionString); //Call only once in the application
