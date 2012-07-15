@@ -5,7 +5,7 @@
         $ovcon = $('#'+ovid);
     
     // Clicking on the Compose button:
-    $('.compose_kudo').click(function(e){
+    $('.kudo_compose').click(function(e){
         e.preventDefault();
         if($ovcon.length < 1){
             $('body').append('<div id="'+ovid+'" class="modal hide" />');
