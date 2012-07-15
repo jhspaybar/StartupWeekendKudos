@@ -70,7 +70,12 @@ io.configure(function () {
   io.set("polling duration", 10);
 });
 
-io.redis = new RedisStore;
+io.redis = new RedisStore({
+  host: app.set('redisHost'),
+  port: app.set('redisPort'),
+  db: app.set('redisDb'),
+  pass: app.set('redisPass')
+});
 
 homeStream(io);
 
