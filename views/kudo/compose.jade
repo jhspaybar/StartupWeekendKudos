@@ -1,18 +1,20 @@
 
 #kudo_compose
-    .modal-header
-        button(class='close',data-dismiss='modal') x
-        h3 Cast a Kudo
     .modal-body
+        .rectangle
+            .influenceheading
+                button(class='close',data-dismiss='modal') x
+                span Cast a Kudo
+        .triangle-l
         form(action='/kudo/submit',method='post',class='form-horizontal',id='kudo_form')
             .kudo_column#kudo_column_1
                 fieldset
-                    h3 To
+                    heading To
                     div(class='control-group')
                         div(class='controls')
                             label(for='to_email',class='control-label') Email:
                             input(type='text',name='to_email')
-                    h3 From
+                    heading From
                     div(class='control-group')
                         div(class='controls')
                             label(for='from_name',class='control-label') Name:
@@ -21,12 +23,12 @@
                         div(class='controls')
                             label(for='from_email',class='control-label') Email:
                             input(type='text',name='from_email')
-                    h3 Message
+                    heading Message
                     div(class='control-group')
                         div(class='controls')
                             textarea(name='message')
             .kudo_column#kudo_column_2
-                h3 Values
+                heading Values
                 fieldset
                     div(class='control-group')
                         .kudo_tags_column
@@ -56,16 +58,16 @@
                                 input(type='checkbox',name='tags[]',value='emotional')
                                 label(for='passion',class='control-label') Emotional Intelligence
 
-                h3 Visibility
+                heading Visibility
                 fieldset
-                    div(class='control-group')
+                    div(class='control-group',id='kudo_privacy')
                         div(class='controls')
                             input(type='radio',name='privacy',value='public')
                             label(for='privacy',class='control-label') Public
                         div(class='controls')
                             input(type='radio',name='privacy',value='private')
                             label(for='privacy',class='control-label') Private
-                div(class='form-actions')
-                    input(type='submit',name='submit',value='Submit',id='kudo_submit')
-                        
+                div(id='kudo_submit_box')
+                    a(href='#',class='btn',data-dismiss='modal') Close
+                    a(href='#',class='btn btn-primary',id='kudo_submit') Save changes    
                 

@@ -13,12 +13,38 @@
         padding: 10px;
         background: white;
     }
+        #kudo_compose .rectangle {
+            left: -10px;
+            width: 780px;
+            margin: 0 !important;
+            top: -10px;
+        }
+        #kudo_compose .rectangle,
+        #kudo_compose .influenceheading {
+            margin: 0 !important;
+        }
+            #kudo_compose .influenceheading {
+                margin-top: 0px;
+            }
+                #kudo_compose .influenceheading span {
+                    display: inline-block;
+                    padding: 16px 0 0 10px;
+                }
+                    #kudo_compose .influenceheading .close {
+                        margin: 10px;
+                        color: white;
+                    }
         #kudo_compose form, 
         #kudo_compose fieldset, 
         #kudo_compose .control-group, 
         #kudo_compose .controls {
             padding: 0;
             margin: 0;
+        }
+        
+        #kudo_compose heading {
+            display: inline-block;
+            padding: 10px 0 0 0;
         }
         
         #kudo_compose .kudo_column {
@@ -29,29 +55,51 @@
             margin: 0;
             
         }
-            #kudo_column_1 label {
-                width: 70px;
-                float: left;
-                font-size: 16px;
-                text-align: left !important;
+            #kudo_column_1 .control-group {
+                margin-top: 5px;
             }
-            .kudo_tags_column {
-                width: 170px;
-                padding: 0 10px 0 0;
-                float: left;
-                overflow: hidden;
-            }
-                .kudo_tags_column .controls {
-                    width: 100%;
-                    clear: both;
+                #kudo_column_1 label {
+                    width: 60px;
+                    float: left;
+                    font-size: 16px;
+                    text-align: left !important;
                 }
-                    .kudo_tags_column input,
-                    .kudo_tags_column label {
-                        float: left;
-                        display: inline-block;
-                        positiopn: relative;
+                #kudo_column_1 input[type="text"] {
+                    width: 270px;
+                }
+                #kudo_column_1 textarea {
+                    width: 330px;
+                }
+                .kudo_tags_column {
+                    width: 170px;
+                    padding: 0 10px 0 0;
+                    float: left;
+                    overflow: hidden;
+                }
+                    .kudo_tags_column .controls {
+                        width: 100%;
+                        clear: both;
                     }
-                    .kudo_tags_column label {
-                        text-align: left !important;
-                        padding: 0 0 0 5px !important;
+                        .kudo_tags_column input,
+                        .kudo_tags_column label,
+                        #kudo_privacy input, 
+                        #kudo_privacy label {
+                            float: left;
+                            display: inline-block;
+                            positiopn: relative;
+                        }
+                        .kudo_tags_column label,
+                        #kudo_privacy label {
+                            text-align: left !important;
+                            padding: 0 0 0 5px !important;
+                        }
+                        #kudo_privacy .controls {
+                            clear: both;
+                        }
+                #kudo_submit_box {
+                    margin: 20px 0 0 0;
+                }
+                    #kudo_submit_box a {
+                        margin-left: 10px;
+                        float: right;
                     }
