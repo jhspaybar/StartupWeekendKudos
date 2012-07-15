@@ -22,7 +22,7 @@ module.exports = function(app) {
   
   // Kudo creation paths:
   app.get('/kudo/compose', kudoController.compose);
-  app.post('/kudo/submit', kudoController.submit);
+  app.post('/kudo/submit', kudoController.submitPost);
   app.get('/kudo/submit', kudoController.submitGet);
 
   // Signup Paths
