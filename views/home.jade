@@ -8,9 +8,10 @@ html(lang='en')
       .row.span6.offset3
         .btn.btn-primary#moredata More Data
       .row#realtime
-    .container
+   .container
       script(type='in/Login')
-        You You are identified as <?js= firstName ?> <?js= lastName ?>.
+        You are identified as <?js= firstName ?> <?js= lastName ?>.
+
   include script/default
   script(src='/socket.io/socket.io.js')
   script
@@ -22,3 +23,4 @@ html(lang='en')
       $('#realtime').prepend('<div class="row span12"><p>' +data.kudo.user+ '</p>' + '<p>' +data.kudo.message+ '</p>');
       socket.emit('my other event', { my: 'data' });
     });
+
