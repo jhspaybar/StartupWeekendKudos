@@ -22,7 +22,7 @@ html(lang='en')
             ul.nav.pull-right
               - if (typeof session._id !== 'undefined')
                 li
-                  a(href='/profile/#{session.user}') #{session.user}
+                  a(href='/profile/#{session._id}') #{session.user}
                 li
                   a(href='/signout') Sign out
               - else
