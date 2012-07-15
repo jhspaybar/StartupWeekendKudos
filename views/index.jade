@@ -4,26 +4,31 @@ block headData
 
 
 block content
-  .container
-    .span5.offset3.kudos
-      .row
+    br
+    .span5.offset3
+      .row(style='margin: 0 -10% 0 -10%;')
         .homeheader(style='font-family: arial; font-size: 160%')
           | Start praising your peers by casting a 
           a(href='',class='kudo_compose') 
             img(src='/img/kudo.png')
+          | .
           - if (!session._id)
-            | ,
-            br
-            | the easiest way to recognize their work achievements.
-          - else
-            .
+            p The easiest way to recognize their work achievements.
       .row
         .rectanglekudo
           .kudoheading KudoCasts Worldwide
         .triangle-lkudo
         .triangle-r
-        .kudobox
-          .row#realtime
+        .kudobox#realtime
+          - for (var i = 0; i < recent.length; i++)
+            .row
+              .kudopicturespan
+                img.picture(src='#{recent[i].photo}', height='60px', width='60px', class='recommender_picture')
+              .shoutoutspan(style='margin: 0 10 0 10; padding: 0 0 0 0; height:100%; width:90%')
+                .shoutout #{recent[i].content}
+            .row(style='margin-left:50px')
+              .creator #{recent[i].creator}
+              .date Sent #{recent[i].date}
 
   
 block afterFooter
@@ -31,5 +36,5 @@ block afterFooter
   script
     var socket = io.connect('/');
     socket.on('kudostream', function (data) {
-      $('#realtime').prepend('<div class="row span12"><p>'+data+'</p></div>');
+      $('#realtime').prepend(data);
     });
