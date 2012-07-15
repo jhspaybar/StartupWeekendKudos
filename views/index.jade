@@ -4,6 +4,7 @@ block headData
 
 
 block content
+    br
     .span5.offset3
       .row
         .homeheader(style='font-family: arial; font-size: 160%')
@@ -20,6 +21,15 @@ block content
         .triangle-lkudo
         .triangle-r
         .kudobox#realtime
+          - for (var i = 0; i < recent.length; i++)
+            .row
+              .kudopicturespan
+                img.picture(src='#{recent[i].photo}', height='60px', width='60px', class='recommender_picture')
+              .shoutoutspan(style='margin: 0 10 0 10; padding: 0 0 0 0; height:100%; width:90%')
+                .shoutout #{recent[i].content}
+            .row(style='margin-left:50px')
+              .creator #{recent[i].creator}
+              .date Sent #{recent[i].date}
 
   
 block afterFooter
