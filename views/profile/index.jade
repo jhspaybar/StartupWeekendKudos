@@ -1,5 +1,8 @@
 extend ../layout
 
+block headData
+  link(href='//fonts.googleapis.com/css?family=Squada+One', rel='stylesheet', type='text/css')
+
 block content
     .span4
       .rectangle
@@ -43,8 +46,8 @@ block content
           .shoutoutspan
             .shoutout #{kudo_text}
         .row
-          .shoutout-name #{name_0} 
-          .shoutout-date Sent #{time_sent}
+          .creator #{name_0} 
+          .date Sent #{time_sent}
            
         .row 
           .kudopicturespan
@@ -52,13 +55,13 @@ block content
           .shoutoutspan 
             .shoutout #{kudo_text}
         .row
-          .shoutout-name #{name_1}
-          .shoutout-date Sent #{time_sent2}
+          .creator #{name_1}
+          .date Sent #{time_sent2}
         .row  
           .kudopicturespan 
             img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
           .shoutoutspan
             .shoutout #{kudo_text}
         .row
-          .shoutout-name #{name_2}
-          .shoutout-date Sent #{time_sent3} 
+          .creator #{name_2}
+          .date Sent #{time_sent3} 
