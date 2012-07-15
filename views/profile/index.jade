@@ -6,9 +6,9 @@ block headData
 block content
     .span4
       .rectangle
-        .influenceheading Basic Information
+        .influenceheading Your Profile 
       .triangle-l
-      .profilebox   
+      .profilebox 
         .row 
            .picturespan
              img.picture(src='#{photoref}', height='110%', width='110%')
@@ -20,6 +20,7 @@ block content
            .span2
              heading.p.kudos Kudos Score:
              p.ratingtext #{rating}
+             .kudostotal out of 100
            .strengthspan
              heading Top Strengths:
              p.profiletext 1. #{strength1}
@@ -39,16 +40,28 @@ block content
       .triangle-lkudo
       .triangle-r
       .kudobox
-        hr 
         .row
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .kudopicturespan
+            img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          .shoutoutspan
+            .shoutout #{kudo_text}
         .row
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .shoutout-name #{name_0} 
+          .shoutout-date Sent #{time_sent}
+           
         .row 
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .kudopicturespan
+            img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          .shoutoutspan 
+            .shoutout #{kudo_text}
         .row
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .shoutout-name #{name_1}
+          .shoutout-date Sent #{time_sent2}
+        .row  
+          .kudopicturespan 
+            img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          .shoutoutspan
+            .shoutout #{kudo_text}
+        .row
+          .shoutout-name #{name_2}
+          .shoutout-date Sent #{time_sent3} 
