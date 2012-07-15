@@ -2,3 +2,8 @@
   font-family: Verdana;
   font-size: 100%;
 }
+
+body {
+ background-image: url('/bg/bg.png');
+ background-repeat: repeat;
+}
