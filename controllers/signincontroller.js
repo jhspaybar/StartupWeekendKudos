@@ -12,7 +12,8 @@ exports.signinPost = function(req, res) {
                     lastname: req.param('lastname'),
                     email: req.param('email'),
                     password: hash,
-                    privacy: 0};
+                    privacy: 0,
+                    autogen: false};
     if (req.param('cellphone')) {
       userHash.cellphone = req.param('cellphone');
     }
