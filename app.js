@@ -6,6 +6,7 @@ var express = require('express')
   , routes = require('./routes/router')
   , homeStream = require('./socket/homestream')
   , http = require('http')
+  , https = require('https')
   , lessMiddleware = require('less-middleware')
   , mongoose = require('mongoose')
   , RedisStore = require('connect-redis')(express);
