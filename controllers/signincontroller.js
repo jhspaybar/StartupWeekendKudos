@@ -24,8 +24,9 @@ exports.signinPost = function(req, res) {
                                     signup: true,
                                     error: err});
       } else {
+        req.session.regenerate();
         req.session.user = saved.email;
-        req.session.id = saved._id;
+        req.session._id = saved.id;
         console.log('User created successfully');
         res.redirect('/profile');
       }
@@ -45,30 +46,30 @@ exports.signinPut = function(req, res) {
   var address = req.param('email');
   var pw = req.param('password');
   var hadError = false;
-  /*
+  var responseVars = {title: 'Sign in',
+                      signup: false,
+                      error: 'Improper login credentials'};
+
   User.findOne({email: address}, function(err, user) {
     if (!err && user) {
       bcrypt.compare(pw, user.password, function(err, matched) {
-        if (err) {
-          hadError = true;
-        } else {
-          req.session.user = user.email;
-          req.session.id = user._id;
+        if (!err) {
+          req.session.regenerate(function(err) {
+            req.session.user = user.email;
+            req.session._id = user.id;
+            res.redirect('/profile');
+          });
+          return;
         }
+        res.render('signin/index', responseVars);
       });
     } else {
-      hadError = true;
+      res.render('signin/index', responseVars);
     }
-  });*/
-  var responseVars = {title: 'Sign in',
-                      signup: false};
-  if (hadError) {
-    responseVars.error = 'Improper login credentials';
-  }
-  res.render('signin/index', responseVars);
+  });
 }
 
 exports.signinDel = function(req, res) {
-  req.session._id = undefined;
+  req.session.destroy();
   res.redirect('/');
 }

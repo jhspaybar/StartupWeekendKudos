@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  - if (typeof(error) !== 'undefined')
+  - if (typeof error !== 'undefined')
     .row.well.span6.offset3
       p #{error}
   - if (signup)
@@ -53,7 +53,7 @@ block content
           div(class='control-group')
             label(for='email',class='control-label') Email
             div(class='controls')
-              input(type='text',name='name',value='Meeeee')
+              input(type='text',name='email')
           div(class='control-group')
             label(for='password',class='control-label') Password
             div(class='controls')
