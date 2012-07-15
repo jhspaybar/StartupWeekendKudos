@@ -1,5 +1,5 @@
-var User = require('../models/usermodel.js');
-var bcrypt = require('../node_modules/bcrypt/bcrypt.js');
+var User = require('../models/usermodel');
+var bcrypt = require('bcrypt');
 
 exports.signinGet = function(req, res) {
   res.render('signin/index', {title: 'Sign up now!',

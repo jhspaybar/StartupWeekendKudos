@@ -13,7 +13,8 @@ var UserSchema = new Schema({
   photoref: {type: String, required: false},
   twitter: {type: String, required: false},
   linkedin: {type: String, required: false},
-  privacy: {type: Number, required: true}
+  privacy: {type: Number, required: true},
+  autogen: {type: Boolean, required: true}
 });
 
 UserSchema.virtual('name').get(function() {
