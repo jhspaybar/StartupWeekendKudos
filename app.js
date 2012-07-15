@@ -64,6 +64,8 @@ io.configure(function () {
   io.set("polling duration", 10);
 });
 
+io.redis = new RedisStore;
+
 homeStream(io);
 
 server.listen(port);

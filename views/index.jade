@@ -1,18 +1,12 @@
 extends layout
 
 block content
-  .row.span6.offset3
-    .btn.btn-primary#moredata More Data
   .row#realtime
   
 block afterFooter
   script(src='/socket.io/socket.io.js')
   script
     var socket = io.connect('http://localhost:3000');
-    $('#moredata').click(function() {
-      socket.emit('getMore', { my: 'data'});
-    });
-    socket.on('news', function (data) {
-      $('#realtime').prepend('<div class="row span12"><p>' +data.kudo.user+ '</p>' + '<p>' +data.kudo.message+ '</p>');
-      socket.emit('my other event', { my: 'data' });
+    socket.on('kudostream', function (data) {
+      $('#realtime').prepend('<div class="row span12"><p>' +data.user+ '</p>' + '<p>' +data.message+ '</p>');
     });
