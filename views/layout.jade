@@ -22,14 +22,18 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand(href='/') 
-            i.icon-briefcase.icon-white
-            |Recognize
+          a.brand(href='/',style='padding: 0 0 0 0') 
+            img(src='/img/kudocast.png')
           .nav-collapse
             ul.nav.pull-left
-              li.active
-                a(href='/nav') Nav Item
+              li
+                a(href='/') Home
+              li
+                a(href='',class='kudo_compose') Cast a kudo
             ul.nav.pull-right
+              form(class='navbar-search')
+                input(type='search',name='search',placeholder='Search',class='span2 search-query')
+                .icon-search
               - if (typeof session._id !== 'undefined')
                 li
                   a(href='/profile/#{session._id}') #{session.user}

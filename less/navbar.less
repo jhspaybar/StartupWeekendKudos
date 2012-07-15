@@ -115,7 +115,7 @@
   .navbarVerticalAlign(28px); // Vertically center in navbar
   margin-bottom: 0;
   .search-query {
-    padding: 4px 9px;
+    padding: 4px 9px 0 29px;
     #font > .sans-serif(13px, normal, 1);
     color: @white;
     background-color: @navbarSearchBackground;
@@ -128,7 +128,7 @@
     // Focus states (we use .focused since IE7-8 and down doesn't support :focus)
     &:focus,
     &.focused {
-      padding: 5px 10px;
+      padding: 5px 10px 0 29px;
       color: @grayDark;
       text-shadow: 0 1px 0 @white;
       background-color: @navbarSearchBackgroundFocus;
@@ -139,6 +139,16 @@
   }
 }
 
+.navbar-search .icon-search {
+    position: absolute;
+    top: 5px;
+    left: 11px;
+    background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings-white.png");
+}
+
+.search-query:focus + .icon-search {
+    background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
+}
 
 
 // FIXED NAVBAR
@@ -185,7 +195,7 @@
   left: 0;
   display: block;
   float: left;
-  margin: 0 10px 0 0;
+  margin: 5px 10px 0 0;
 }
 .navbar .nav.pull-right {
   float: right; // redeclare due to specificity

@@ -4,6 +4,7 @@ exports.profile = function(req, res) {
   var id = req.param('_id') || req.session._id;
   User.findOne({_id: id}, function(err, user) {
     res.render('profile/index.jade', {
+      id: id,
       title: 'Your Profile',
       firstname: user && user.firstname || 'Elizabeth',
       lastname: user && user.lastname || 'Chaddock',
