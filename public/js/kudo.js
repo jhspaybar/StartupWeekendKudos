@@ -32,7 +32,7 @@
                 $('#'+ovid).find('.modal-body').html('<div id="kudo_submit_thanks"><heading>Your Kudo has been Cast!</heading></div>');
                 window.setTimeout(function(){
                     $('#'+ovid).modal('hide'); 
-                }, 2000);          
+                }, 2500);          
             }
         });
     });
