@@ -7,7 +7,7 @@ exports.profile = function(req, res) {
       title: 'Your Profile',
       firstname: user && user.firstname || 'Elizabeth',
       lastname: user && user.lastname || 'Chaddock',
-      position: user && user.position || 'Developer',
+      position: user && user.title || 'Developer',
       company: user && user.company || 'Amazon.com',
       geoloc: user && user.geoloc || 'Seattle, WA',
       photoref: user && user.photoref || 'http://www.almostsavvy.com/wp-content/uploads/2011/04/profile-photo.jpg',
