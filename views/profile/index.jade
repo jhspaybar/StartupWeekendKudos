@@ -23,18 +23,26 @@ block content
              .kudostotal out of 100
            .strengthspan
              heading Top Strengths:
-             p.profiletext 1. #{strength1}
-             p.profiletext 2. #{strength2}
-             p.profiletext 3. #{strength3} 
+             img(src='#{strength1}', height='25px', class='strength') 
+             img(src='#{strength2}', height='25px', class='strength')
+             img(src='#{strength3}', height='25px', class='strength') 
       .rectangle
-        .influenceheading Influence Reach
+        .influenceheading Cast Reach
       .triangle-l
       .influencebox 
-        img(src='/img/map.png', height='150px', class='map')
+        .row
+          .mapspan
+            img(src='/img/map.png', height=100px', class='map')
+          .profiletextspanreach
+            p.profiletextreach Top Companies:
+            p.profiletextreach 1. Microsoft
+            p.profiletextreach 2.Amazon
+            p.profiletextreach 3. YMCA
+
     .span5.offset1
       .row
         a(href='').kudo_compose
-          img(src='/img/cast_a_kudo.png', height='200px', class='cast') 
+          img(src='/img/cast_a_kudo.png', class='cast') 
       .row 
         .rectanglekudo
           .kudoheading KudoCast
