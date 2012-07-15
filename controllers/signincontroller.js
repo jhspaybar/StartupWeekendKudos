@@ -8,29 +8,41 @@ exports.signinGet = function(req, res) {
 
 exports.signinPost = function(req, res) {
   var afterHash = function(error, hash) {
-    var userHash = {firstname: req.param('firstname'),
-                    lastname: req.param('lastname'),
-                    email: req.param('email'),
-                    password: hash,
-                    privacy: 0,
-                    autogen: false};
-    if (req.param('cellphone')) {
-      userHash.cellphone = req.param('cellphone');
-    }
-    var user = new User(userHash);
-    user.save(function(err, saved) {
-      if (err) {
+    User.findOne({email: req.param('email')}, function(err, user) {
+      if (user && !user.autogen) {
         res.render('signin/index', {title: 'Sign up now!',
                                     signup: true,
-                                    error: 'Credentials incorrect'});
-      } else {
-        req.session.regenerate(function(err) {
-          req.session.user = saved.email;
-          req.session._id = saved.id;
-          console.log('User created successfully');
-          res.redirect('/linkin');
-        });
+                                    error: 'Account with that email already exists.'});
+        return;
       }
+      var userHash = {firstname: req.param('firstname'),
+                      lastname: req.param('lastname'),
+                      email: req.param('email'),
+                      password: hash,
+                      privacy: 0,
+                      autogen: false};
+      if (req.param('cellphone')) {
+        userHash.cellphone = req.param('cellphone');
+      }
+      if (user) {
+        user.update(userHash);
+      } else {
+        user = new User(userHash);
+      }
+      user.save(function(err, saved) {
+        if (err) {
+          res.render('signin/index', {title: 'Sign up now!',
+                                      signup: true,
+                                      error: 'Credentials incorrect.'});
+        } else {
+          req.session.regenerate(function(err) {
+            req.session.user = saved.email;
+            req.session._id = saved.id;
+            console.log('User created successfully');
+            res.redirect('/linkin');
+          });
+        }
+      });
     });
   };
   if (req.param('password') === req.param('password2') &&
@@ -39,7 +51,7 @@ exports.signinPost = function(req, res) {
   } else {
     res.render('signin/index', {title: 'Sign up now!',
                                 signup: true,
-                                error: 'Password too short or did not match'});
+                                error: 'Password too short or did not match.'});
   }
 };
 
@@ -49,10 +61,10 @@ exports.signinPut = function(req, res) {
   var hadError = false;
   var responseVars = {title: 'Sign in',
                       signup: false,
-                      error: 'Improper login credentials'};
+                      error: 'Improper login credentials.'};
 
   User.findOne({email: address}, function(err, user) {
-    if (!err && user) {
+    if (!err && user && !user.autogen) {
       bcrypt.compare(pw, user.password, function(err, matched) {
         if (!err && matched) {
           req.session.regenerate(function(err) {
@@ -68,6 +80,9 @@ exports.signinPut = function(req, res) {
         }
         res.render('signin/index', responseVars);
       });
+    } else if (user.autogen) {
+      responseVars.error = 'Please create an account with KudoCast to log in.';
+      res.render('signin/index', responseVars);
     } else {
       res.render('signin/index', responseVars);
     }
