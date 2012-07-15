@@ -12,7 +12,7 @@ if (process.env.REDISTOGO_URL) {
 }
 
 exports.list = function(req, res) {
-  Kudo.find({}).sort('date', 1).slice([0,10]).exec( function(error, docs) {
+  Kudo.find({}).sort('date', -1).slice([0,10]).exec( function(error, docs) {
     console.log(docs);
   });
   res.send('test');
