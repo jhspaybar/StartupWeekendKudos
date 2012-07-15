@@ -6,9 +6,16 @@ block headData
 block content
   .container
     .center
-      .homeheader Start praising your peers by casting a 
+      .homeheader(style='font-family: arial; font-size: 160%')
+        | Start praising your peers by casting a 
         a(href='',class='kudo_compose') 
-        , the easiest way to recognize their work achievements.
+          img(src='/img/kudo.png')
+        - if (!session._id)
+          | ,
+          br
+          | the easiest way to recognize their work achievements.
+        - else
+          .
   .row#realtime
 
   
