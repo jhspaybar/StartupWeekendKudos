@@ -4,17 +4,14 @@ block headData
 
 
 block content
-  .container
-    .span5.offset3.kudos
+    .span5.offset3
       .row
         .homeheader(style='font-family: arial; font-size: 160%')
           | Start praising your peers by casting a 
           a(href='',class='kudo_compose') 
             img(src='/img/kudo.png')
           - if (!session._id)
-            | ,
-            br
-            | the easiest way to recognize their work achievements.
+            p the easiest way to recognize their work achievements.
           - else
             .
       .row
@@ -22,8 +19,7 @@ block content
           .kudoheading KudoCasts Worldwide
         .triangle-lkudo
         .triangle-r
-        .kudobox
-          .row#realtime
+        .kudobox#realtime
 
   
 block afterFooter
@@ -31,5 +27,5 @@ block afterFooter
   script
     var socket = io.connect('/');
     socket.on('kudostream', function (data) {
-      $('#realtime').prepend('<div class="row span12"><p>'+data+'</p></div>');
+      $('#realtime').prepend(data);
     });
