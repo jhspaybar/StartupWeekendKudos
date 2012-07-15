@@ -4,6 +4,7 @@
 
 var express = require('express')
   , routes = require('./routes/router')
+  , homeStream = require('./socket/homestream')
   , http = require('http')
   , lessMiddleware = require('less-middleware')
   , mongoose = require('mongoose')
@@ -22,7 +23,7 @@ var express = require('express')
 
 var app = express();
 
-var connectionString = process.env.MONGOHQ_URL || 'mongodb://localhost/MassEducateDev'; //Get Heroku connection, or dev host...
+var connectionString = process.env.MONGOHQ_URL || 'mongodb://localhost/Recognize'; //Get Heroku connection, or dev host...
 mongoose.connect(connectionString); //Call only once in the application
 
 app.configure(function(){
@@ -63,25 +64,7 @@ io.configure(function () {
   io.set("polling duration", 10);
 });
 
-io.sockets.on('connection', function (socket) {
-  socket.emit('news', { kudo: 
-    {
-      message: 'TestMessage',
-      user: 'bob'
-    }
-  });
-  socket.on('getMore', function(data) {
-    socket.emit('news', { kudo: 
-      {
-        message: 'TestMessage',
-        user: 'bob'
-      }
-    });
-  })
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
+homeStream(io);
 
 server.listen(port);
 
