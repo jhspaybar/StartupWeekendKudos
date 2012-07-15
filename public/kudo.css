@@ -1,4 +1,57 @@
+.modal, .modal_container {
+    width: 800px;
+    margin-left: -400px;
+}
+
 #kudo_compose {
-    background: white;
+    background: #F0FF00;
+    width: 780px !important;
+    padding: 10px;
     
 }
+    #kudo_compose .modal-body {
+        padding: 10px;
+        background: white;
+    }
+        #kudo_compose form, 
+        #kudo_compose fieldset, 
+        #kudo_compose .control-group, 
+        #kudo_compose .controls {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #kudo_compose .kudo_column {
+            float: left;
+            width: 370px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            
+        }
+            #kudo_column_1 label {
+                width: 70px;
+                float: left;
+                font-size: 16px;
+                text-align: left !important;
+            }
+            .kudo_tags_column {
+                width: 170px;
+                padding: 0 10px 0 0;
+                float: left;
+                overflow: hidden;
+            }
+                .kudo_tags_column .controls {
+                    width: 100%;
+                    clear: both;
+                }
+                    .kudo_tags_column input,
+                    .kudo_tags_column label {
+                        float: left;
+                        display: inline-block;
+                        positiopn: relative;
+                    }
+                    .kudo_tags_column label {
+                        text-align: left !important;
+                        padding: 0 0 0 5px !important;
+                    }

@@ -6,9 +6,9 @@ block headData
 block content
     .span4
       .rectangle
-        .influenceheading Basic Information
+        .influenceheading Your Profile 
       .triangle-l
-      .profilebox   
+      .profilebox 
         .row 
            .picturespan
              img.picture(src='#{photoref}', height='110%', width='110%')
@@ -20,6 +20,7 @@ block content
            .span2
              heading.p.kudos Kudos Score:
              p.ratingtext #{rating}
+             .kudostotal out of 100
            .strengthspan
              heading Top Strengths:
              p.profiletext 1. #{strength1}
@@ -33,22 +34,42 @@ block content
         .influenceheading Gifts Funded
       .triangle-l
       .influencebox 
+    img(src='/img/cast_a_kudo.png', height='40%', width='40%', class='cast') 
     .span5.row 
       .rectanglekudo
         .kudoheading KudoCast
       .triangle-lkudo
       .triangle-r
       .kudobox
-        hr 
         .row
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .kudopicturespan
+            img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          .shoutoutspan
+            .shoutout #{kudo_text}
         .row
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .creator #{name_0} 
+          .date Sent #{time_sent}
+           
         .row 
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .kudopicturespan
+            img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          .shoutoutspan 
+            .shoutout #{kudo_text}
         .row
-          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
-          span.shoutout #{kudo_text}
+          .creator #{name_1}
+          .date Sent #{time_sent2}
+        .row  
+          .kudopicturespan 
+            img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          .shoutoutspan
+            .shoutout #{kudo_text}
+        .row
+          .creator #{name_2}
+          .date Sent #{time_sent3}
+        .row  
+          .kudopicturespan 
+            img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          .shoutoutspan
+            .shoutout #{kudo_text}
+            
+   .button.kudo_compose Text

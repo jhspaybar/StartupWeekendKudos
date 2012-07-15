@@ -11,7 +11,7 @@ exports.signinPost = function(req, res) {
     var userHash = {firstname: req.param('firstname'),
                     lastname: req.param('lastname'),
                     email: req.param('email'),
-                    password: req.param('password'),
+                    password: hash,
                     privacy: 0};
     if (req.param('cellphone')) {
       userHash.cellphone = req.param('cellphone');
@@ -53,7 +53,7 @@ exports.signinPut = function(req, res) {
   User.findOne({email: address}, function(err, user) {
     if (!err && user) {
       bcrypt.compare(pw, user.password, function(err, matched) {
-        if (!err) {
+        if (!err && matched) {
           req.session.regenerate(function(err) {
             req.session.user = user.email;
             req.session._id = user.id;
