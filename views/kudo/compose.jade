@@ -1,0 +1,46 @@
+
+.row#kudo_compose
+    h2 Send a Kudo to #{kudee} 
+    form(action='/kudo/submit',method='post',class='form-horizontal')
+        .well
+            fieldset
+                div(class='control-group')
+                    div(class='controls')
+                        label(for='from',class='control-label') From
+                        input(type='text',name='from')
+                div(class='control-group')
+                    div(class='controls')
+                        label(for='email',class='control-label') Email
+                        input(type='text',name='email')
+                div(class='control-group')
+                    label(for='message',class='control-label') Message
+                    div(class='controls')
+                        textarea(name='message')
+        .well
+            h2 Choose Categories
+            fieldset
+                div(class='control-group')
+                    div(class='controls')
+                        input(type='checkbox',name='categories[]',value='leadership')
+                        label(for='leadership',class='control-label') Leadership
+                    div(class='controls')
+                        input(type='checkbox',name='categories[]',value='teamwork')
+                        label(for='teamwork',class='control-label') Teamwork
+                    div(class='controls')
+                        input(type='checkbox',name='categories[]',value='passion')
+                        label(for='passion',class='control-label') Passion
+            fieldset
+                div(class='control-group')
+                    div(class='controls')
+                        input(type='radio',name='privacy',value='public')
+                        label(for='privacy',class='control-label') Public
+                    div(class='controls')
+                        input(type='radio',name='privacy',value='private')
+                        label(for='privacy',class='control-label') Private
+            div(class='form-actions')
+                input(type='submit',name='submit',value='Submit')
+                    
+                    
+                    
+                    
+                    

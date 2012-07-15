@@ -18,7 +18,6 @@ module.exports = function(app) {
   
   //Profile Paths
   app.get('/profile', profileController.profile);
-  app.get('/profile/:_id', profileController.profile);
   
   // Kudo creation paths:
   app.get('/kudo/compose', kudoController.compose);
@@ -31,6 +30,4 @@ module.exports = function(app) {
   app.post('/signin', signinController.signinPut);
   app.post('/signup', signinController.signinPost);
   app.get('/signout', signinController.signinDel);
-  app.get('/linkin', signinController.linkinGet);
-  app.post('/linkin', signinController.linkinPost);
-};
+}
