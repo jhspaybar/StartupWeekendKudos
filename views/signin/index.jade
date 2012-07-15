@@ -16,34 +16,34 @@ block content
             form(action='/signup',method='post',class='form-horizontal form')
               fieldset
                 div(class='control-group')
-                  label(for='firstname',class='control-label') First name
+                  label(for='firstname',class='control-label logintext') First name
                   div(class='controls')
                     input(type='text',name='firstname',class='span2')
                 div(class='control-group')
-                  label(for='lastname',class='control-label') Last name
+                  label(for='lastname',class='control-label logintext') Last name
                   div(class='controls')
                     input(type='text',name='lastname',class='span2')
                 div(class='control-group')
-                  label(for='email',class='control-label') Email
+                  label(for='email',class='control-label logintext') Email
                   div(class='controls')
                     input(type='text',name='email',class='span2')
                 div(class='control-group')
-                  label(for='password',class='control-label') Password
+                  label(for='password',class='control-label logintext') Password
                   div(class='controls')
                     input(type='password',name='password',class='span2')
                 div(class='control-group')
-                  label(for='password2',class='control-label') Confirm password
+                  label(for='password2',class='control-label logintext') Confirm password
                   div(class='controls')
                     input(type='password',name='password2',class='span2')
                 div(class='control-group')
-                  label(for='cellphone',class='control-label') Cell phone
+                  label(for='cellphone',class='control-label logintext') Cell phone
                   div(class='controls')
                     input(type='text',name='cellphone',class='span1')
                     input(type='text',name='cellphone',class='span1')
                     input(type='text',name='cellphone',class='span1')
-                    p (Optional) To receive kudos via text.
+                    p(class='loginhint') (Optional) To receive kudos via text.
                 div(class='form-actions')
-                  input(type='submit',name='submit',value='Sign up')
+                  input(type='submit',name='submit',value='Sign up',class='logintext')
   - else
     .center
       .span5
@@ -56,12 +56,12 @@ block content
             form(action='/signin',method='post',class='form-horizontal form')
               fieldset
                 div(class='control-group')
-                  label(for='email',class='control-label') Email
+                  label(for='email',class='control-label logintext') Email
                   div(class='controls')
                     input(type='text',name='email',class='span2')
                 div(class='control-group')
-                  label(for='password',class='control-label') Password
+                  label(for='password',class='control-label logintext') Password
                   div(class='controls')
                     input(type='password',name='password',class='span2')
                 div(class='form-actions')
-                  input(type='submit',name='submit',value='Sign in')
+                  input(type='submit',name='submit',value='Sign in',class='logintext')

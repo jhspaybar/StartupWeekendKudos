@@ -1,4 +1,28 @@
+.modal, .modal_container {
+    width: 800px;
+    margin-left: -400px;
+}
+
 #kudo_compose {
     background: white;
+    padding: 10px;
+    width: 600px !important;
     
 }
+    /*
+    #kudo_compose form, 
+    #kudo_compose fieldset, 
+    #kudo_compose .control-group, 
+    #kudo_compose .controls {
+        padding: 0;
+        margin: 0;
+    }
+    */
+    #kudo_compose .kudo_column {
+        float: left;
+        width: 290px;
+        overflow: hidden;
+        padding: 0;
+        margion: 0;
+        
+    }

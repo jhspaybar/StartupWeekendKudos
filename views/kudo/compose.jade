@@ -1,8 +1,8 @@
 
-#kudo_compose
+#kudo_compose.modal-body
     h2 Send a Kudo to #{kudee} 
     form(action='/kudo/submit',method='post',class='form-horizontal',id='kudo_form')
-        .well
+        .kudo_column
             fieldset
                 div(class='control-group')
                     div(class='controls')
@@ -20,7 +20,7 @@
                     label(for='message',class='control-label') Message
                     div(class='controls')
                         textarea(name='message')
-        .well
+        .kudo_column
             h2 Choose tags
             fieldset
                 div(class='control-group')
