@@ -1,13 +1,13 @@
 
 (function(){
     
-    var ovid = 'overlay_container',
+    var ovid = 'modal_container',
         $ovcon = $('#'+ovid);
     
     // Clicking on the Compose button:
-    $('#compose_kudo').click(function(){
+    $('.compose_kudo').click(function(){
         if($ovcon.length < 1){
-            $('body').append('<div id="'+ovid+'" />');
+            $('body').append('<div id="'+ovid+'" class="modal hide" />');
         }
         $.ajax({
             type: 'get',
