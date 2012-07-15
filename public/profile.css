@@ -7,6 +7,16 @@
   box-shadow:3px 3px 3px #888888;
 }
 
+.recommender_picture {
+  border: 1px solid white;
+  margin-bottom: 10px;
+  margin-top: -5px;
+  -mox-box-shadow: 0px 3px 3px #888888;
+  -webkit-box-shadow: 0px 3px 3px #888888;
+  box-shadow:3px 3px 3px #888888;
+  margin-left: 20px;
+}
+
 .profiletext {
   font-size: 130%;
   font-family: 'Squada One';
@@ -25,7 +35,7 @@ heading {
 
 .nameheading {
   font-family: 'Squada One';
-  font-size: 230%;
+  font-size: 180%;
   padding-left: 10%;
   padding-bottom: 5%;
 }
@@ -60,7 +70,7 @@ heading {
   padding: 15px;
   margin-top: 0%;
   margin-left: 20%;
-  height: 100px;
+  height: 100%;
   -moz-box-shadow: 0px 3px 3px #888888;
   -webkit-box-shadow: 0px 3px 3px #888888;
   box-shadow:2px 2px 2px #888888;
@@ -133,12 +143,21 @@ heading {
  position: relative;
  left: 17%;
  top: 30px;
- margin-bottom: 15%;
+ margin-bottom: 5%;
  float: left;
  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
  z-index: 100; /* the stack order: foreground */
+}
+
+.shoutout {
+  -moz-box-shadow: 0px 0px 0px white;
+  -webkit-box-shadow: 0px 0px 0px white;
+  box-shadow: 0px 0px 0px white; 
+  height: 100%;
+  padding-bottom: 5%;
+  border: 1px dashed #88888A;
 }
 
 .triangle-l {
@@ -180,4 +199,5 @@ heading {
 hr {
   border: 1px solid #C8C8C8;
   width: 100%;
+  margin-top: 8%;
 }

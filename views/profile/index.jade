@@ -1,7 +1,7 @@
 extend ../layout
 
 block headData
-  link(href='http://fonts.googleapis.com/css?family=Squada+One', rel='stylesheet', type='text/css')
+  link(href='//fonts.googleapis.com/css?family=Squada+One', rel='stylesheet', type='text/css')
 
 block content
     .span4
@@ -33,10 +33,22 @@ block content
         .influenceheading Gifts Funded
       .triangle-l
       .influencebox 
-    .span4.row 
+    .span5.row 
       .rectanglekudo
         .kudoheading KudoCast
       .triangle-lkudo
       .triangle-r
       .kudobox
         hr 
+        .row
+          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          span.shoutout #{kudo_text}
+        .row
+          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          span.shoutout #{kudo_text}
+        .row 
+          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          span.shoutout #{kudo_text}
+        .row
+          img.picture(src='#{photoref_1}', height='60px', width='60px', class='recommender_picture')
+          span.shoutout #{kudo_text}
