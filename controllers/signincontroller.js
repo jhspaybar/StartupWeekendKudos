@@ -23,11 +23,12 @@ exports.signinPost = function(req, res) {
                                     signup: true,
                                     error: 'Credentials incorrect'});
       } else {
-        req.session.regenerate();
-        req.session.user = saved.email;
-        req.session._id = saved.id;
-        console.log('User created successfully');
-        res.redirect('/linkin');
+        req.session.regenerate(function(err) {
+          req.session.user = saved.email;
+          req.session._id = saved.id;
+          console.log('User created successfully');
+          res.redirect('/linkin');
+        });
       }
     });
   };
@@ -91,6 +92,7 @@ exports.linkinGet = function(req, res) {
 
 exports.linkinPost = function(req, res) {
   if (req.session._id) {
+    console.log('updating linked in info');
     console.log(req.param('linkedInID'));
     User.findOne({_id: req.session._id}, function(err, user) {
       user.photoref = req.param('pictureUrl');
