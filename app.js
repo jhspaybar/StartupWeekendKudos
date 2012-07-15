@@ -9,17 +9,15 @@ var express = require('express')
   , lessMiddleware = require('less-middleware')
   , mongoose = require('mongoose')
   , RedisStore = require('connect-redis')(express);
-  /*
-  *  Still need to properly connect on Heroku!
-  */
-  /*if (process.env.REDISTOGO_URL) {
-    var rtg   = require("url").parse(process.env.REDISTOGO_URL);
-    var redis = require("redis").createClient(rtg.port, rtg.hostname);
-
-    redis.auth(rtg.auth.split(":")[1]);
-  } else {
-    var redis = require("redis").createClient();
-  }*/
+  
+  app.configure('production', function () {
+    var redisUrl = url.parse(process.env.REDISTOGO_URL);
+    var redisAuth = redisUrl.auth.split(':');  
+    app.set('redisHost', redisUrl.hostname);
+    app.set('redisPort', redisUrl.port);
+    app.set('redisDb', redisAuth[0]);
+    app.set('redisPass', redisAuth[1]);
+  });
 
 var app = express();
 
@@ -40,7 +38,15 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public')); //Serve static requests out of the /public directory
   app.use(express.bodyParser());
   app.use(express.cookieParser("some-secret"));//User cookies
-  app.use(express.session({ secret: "recognize-dev", store: new RedisStore }));//Connect to redis for our sessions so we can scale horizontally
+  app.use(express.session({
+    secret: 'recognize-dev',
+    store: new RedisStore({
+      host: app.set('redisHost'),
+      port: app.set('redisPort'),
+      db: app.set('redisDb'),
+      pass: app.set('redisPass')
+    })
+  }));//Connect to redis for our sessions so we can scale horizontally
   app.use(express.methodOverride());
   app.use(app.router);
 
