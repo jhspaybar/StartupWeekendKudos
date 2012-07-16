@@ -12,7 +12,7 @@ exports.home = function(req, res) {
         console.log(user);
         User.findOne({_id: doc.targetuser}, function(err, user) {
                       console.log(user);
-          newKudo.photo = user.photoref || '/image/profile-photo.png';
+          newKudo.photo = user.photoref || '/img/profile-photo.png';
           newKudo.creator = user.firstname;
           newKudo.date = 'July 15';
           recentKudos.push(newKudo);
