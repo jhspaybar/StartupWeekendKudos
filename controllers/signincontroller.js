@@ -25,7 +25,7 @@ exports.signinPost = function(req, res) {
         userHash.cellphone = req.param('cellphone');
       }
       if (user) {
-        user.update(userHash);
+        User.update({email: req.param('email')}, userHash);
       } else {
         user = new User(userHash);
       }
