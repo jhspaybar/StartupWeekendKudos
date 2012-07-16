@@ -86,7 +86,7 @@ exports.signinPut = function(req, res) {
         }
         res.render('signin/index', responseVars);
       });
-    } else if (user.autogen) {
+    } else if (user && user.autogen) {
       responseVars.error = 'Please create an account with KudoCast to log in.';
       res.render('signin/index', responseVars);
     } else {
