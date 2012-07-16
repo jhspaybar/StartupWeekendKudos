@@ -21,7 +21,7 @@ exports.home = function(req, res) {
       });
     }, function(err) {
       console.log(recentKudos);
-      res.render('index', {title: 'Recognize.com -- Give and Get Recognition!',
+      res.render('index', {title: 'KudoCast -- Give and Get Recognition!',
                            recent: recentKudos});
       
     });
