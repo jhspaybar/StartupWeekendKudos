@@ -3,7 +3,7 @@ var User = require('../models/usermodel');
 var async = require('async');
 
 exports.home = function(req, res) {
-  Kudo.find({}).sort('date', -1).slice([0,10]).exec( function(error, docs) {
+  Kudo.find({}).sort('_id', -1).limit(10).exec( function(error, docs) {
     var recentKudos = [];
     async.forEach(docs, function(doc, callback) {
       var newKudo = {};
