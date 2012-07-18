@@ -24,7 +24,6 @@ module.exports = function(app) {
   app.get('/kudo/compose', kudoController.compose);
   app.post('/kudo/submit', kudoController.submitPost);
   app.get('/kudo/submit', kudoController.submitGet);
-  app.get('/kudo/testlist', kudoController.list);
 
   // Signup Paths
   app.get('/signin', signinController.signinGet);

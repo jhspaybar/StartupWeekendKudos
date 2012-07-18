@@ -11,13 +11,6 @@ if (process.env.REDISTOGO_URL) {
   redisPub = require("redis").createClient();
 }
 
-exports.list = function(req, res) {
-  Kudo.find({}).sort('date', -1).slice([0,10]).exec( function(error, docs) {
-    console.log(docs);
-  });
-  res.send('test');
-}
-
 exports.compose = function(req, res) {
   var email = req.session.email || '';
   var name = (req.session.firstname || '') +' '+ (req.session.lastname || '');
