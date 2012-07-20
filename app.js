@@ -72,6 +72,7 @@ var io = require('socket.io').listen(server); //create our socket server
 io.configure(function () {
   io.set("transports", ["xhr-polling"]);
   io.set("polling duration", 10);
+  io.set('log level', 1);
 });//Configure our sockets
 
 homeStream(io);
