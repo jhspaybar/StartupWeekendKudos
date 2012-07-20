@@ -9,9 +9,7 @@ exports.home = function(req, res) {
       var newKudo = {};
       newKudo.content = doc.content;
       User.findOne({_id: doc.creator}, function(err, user) {
-        console.log(user);
         User.findOne({_id: doc.targetuser}, function(err, user) {
-                      console.log(user);
           newKudo.photo = user.photoref || '/img/profile-photo.png';
           newKudo.creator = user.firstname;
           newKudo.date = 'July 15';
@@ -20,7 +18,6 @@ exports.home = function(req, res) {
         });
       });
     }, function(err) {
-      console.log(recentKudos);
       res.render('index', {title: 'KudoCast -- Give and Get Recognition!',
                            recent: recentKudos});
       
